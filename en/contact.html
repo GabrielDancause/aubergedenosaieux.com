@@ -174,7 +174,7 @@
 
         <div class="contact-form">
           <h3>Ask Us Your Question</h3>
-          <form id="contact-form">
+          <form id="contact-form" action="https://formspree.io/f/xpwdjqkb" method="POST">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required placeholder="Your name">
@@ -250,17 +250,30 @@
     var btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    // For now, simulate send — replace with real endpoint later
-    setTimeout(function() {
-      status.style.display = 'block';
-      status.style.color = 'var(--green-dark)';
-      status.textContent = 'Thank you! We will get back to you as soon as possible.';
-      form.querySelector('#name').value = '';
-      form.querySelector('#email').value = '';
-      form.querySelector('#message').value = '';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        status.style.display = 'block';
+        status.style.color = 'var(--green-dark)';
+        status.textContent = 'Thank you! We will get back to you as soon as possible.';
+        form.reset();
+      } else {
+        status.style.display = 'block';
+        status.style.color = '#c0392b';
+        status.textContent = 'An error occurred. Please try again or contact us by phone.';
+      }
       btn.textContent = 'Send';
       btn.disabled = false;
-    }, 1000);
+    }).catch(function() {
+      status.style.display = 'block';
+      status.style.color = '#c0392b';
+      status.textContent = 'An error occurred. Please try again or contact us by phone.';
+      btn.textContent = 'Send';
+      btn.disabled = false;
+    });
   });
 })();
 </script>
