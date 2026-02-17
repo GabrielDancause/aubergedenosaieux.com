@@ -77,10 +77,33 @@
       <h1>Page introuvable</h1>
       <p>D&eacute;sol&eacute;, la page que vous cherchez n'existe pas ou a &eacute;t&eacute; d&eacute;plac&eacute;e. Mais la vue est toujours l&agrave;&nbsp;!</p>
       <div class="error-links">
-        <a href="" class="btn-primary">Retour &agrave; l'accueil</a>
+        <a href="index.html" class="btn-primary">Retour &agrave; l'accueil</a>
         <a href="chambres.html" class="btn-secondary">Voir nos chambres</a>
       </div>
     </div>
   </div>
+<script>
+// Smart redirect for old URLs without .html extension
+(function() {
+  var path = window.location.pathname.replace(/\/$/, '');
+  var map = {
+    '/chambres': '/chambres.html',
+    '/services': '/services.html',
+    '/a-propos': '/a-propos.html',
+    '/contact': '/contact.html',
+    '/faq': '/faq.html',
+    '/en/rooms': '/en/rooms.html',
+    '/en/services': '/en/services.html',
+    '/en/about': '/en/about.html',
+    '/en/contact': '/en/contact.html',
+    '/en/faq': '/en/faq.html',
+    '/camping': '/chambres.html#vanlife',
+    '/en/camping': '/en/rooms.html#vanlife'
+  };
+  if (map[path]) {
+    window.location.replace(map[path]);
+  }
+})();
+</script>
 </body>
 </html>
