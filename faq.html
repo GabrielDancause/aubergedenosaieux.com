@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ &mdash; Auberge de nos A&iuml;eux</title>
+  <meta name="description" content="Questions fr&eacute;quentes sur l'Auberge de nos A&iuml;eux : r&eacute;servation, annulation, chambres, animaux, camping et plus.">
+  <link rel="canonical" href="https://aubergedenosaieux.com/faq.html">
+  <link rel="alternate" hreflang="fr" href="https://aubergedenosaieux.com/faq.html">
+  <link rel="alternate" hreflang="en" href="https://aubergedenosaieux.com/en/faq.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .faq-hero {
+      background: var(--green-dark);
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .faq-hero h1 { color: var(--cream); margin-bottom: 12px; }
+    .faq-hero p { color: var(--text-light); font-size: 1.05rem; }
+
+    .faq-section { max-width: 760px; margin: 0 auto; }
+    .faq-category { margin-bottom: 40px; }
+    .faq-category h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      background: var(--white);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-question:hover { background: rgba(44,62,45,0.03); }
+    .faq-question .arrow {
+      font-size: 0.8rem;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .faq-item.open .faq-question .arrow { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 20px 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .faq-answer-inner p { margin-bottom: 8px; }
+    .faq-answer-inner p:last-child { margin-bottom: 0; }
+    .faq-item.open .faq-answer { max-height: 800px; }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/"><img class="nav-logo" src="images/logo.png" alt="Auberge de nos A&iuml;eux" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/chambres.html">Chambres</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/a-propos.html">&Agrave; propos</a></li>
+      <li><a href="/faq.html" class="active">FAQ</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/en/faq.html" class="lang-toggle">EN</a>
+      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">R&eacute;server</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="faq-hero">
+    <h1>Foire aux questions</h1>
+    <p>Tout ce que vous devez savoir pour votre s&eacute;jour</p>
+  </div>
+
+  <section class="section section-cream">
+    <div class="container faq-section">
+
+      <!-- General -->
+      <div class="faq-category">
+        <h2>G&eacute;n&eacute;ral</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">Quelle est la politique d'annulation ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p><strong>Tarif Standard :</strong> Annulation &gt;5 jours avant l'arriv&eacute;e = remboursement de 96,5%. Entre 3 et 5 jours = 46,5%. Moins de 3 jours = aucun remboursement.</p>
+            <p><strong>Tarif Non Remboursable :</strong> Aucun remboursement en aucune circonstance.</p>
+            <p><strong>Derni&egrave;re minute :</strong> Les r&eacute;servations avec arriv&eacute;e le jour m&ecirc;me sont non remboursables.</p>
+            <p>Note : Frais de 3,5% sur toute annulation (frais de commission du syst&egrave;me de paiement).</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Comment se passe l'arriv&eacute;e et le d&eacute;part ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Vous recevrez un SMS et un courriel avec toutes les informations d'acc&egrave;s vers 15h45 le jour de votre arriv&eacute;e.</p>
+            <p><strong>Arriv&eacute;e :</strong> &agrave; partir de 16h &nbsp;|&nbsp; <strong>D&eacute;part :</strong> 11h</p>
+            <p>Si vous n'avez pas re&ccedil;u vos informations, contactez-nous pendant nos heures t&eacute;l&eacute;phoniques.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Y a-t-il une r&eacute;ception sur place ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Nous avons opt&eacute; pour une r&eacute;ception libre-service. Il n'y a pas de personnel &agrave; la r&eacute;ception. Vous recevrez les informations d'acc&egrave;s par SMS et courriel.</p>
+            <p>&Agrave; la r&eacute;ception, vous trouverez savon, shampoing, papier toilette, caf&eacute;, sucre et plus encore.</p>
+            <p>Vous pouvez toujours nous joindre par t&eacute;l&eacute;phone au (581) 333-6633 ou par courriel.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Servez-vous des repas ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Nous n'avons pas de restaurant sur place. Par contre, vous aurez acc&egrave;s &agrave; notre cuisine commune tr&egrave;s bien &eacute;quip&eacute;e : cuisini&egrave;re, micro-ondes, friteuse &agrave; air, cafeti&egrave;re, grille-pain et toute la vaisselle n&eacute;cessaire.</p>
+            <p>Apportez vos aliments et vos talents de chef !</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Y a-t-il des bornes de recharge pour v&eacute;hicules &eacute;lectriques ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Il y a une station du Circuit &eacute;lectrique juste &agrave; c&ocirc;t&eacute;, &agrave; la pharmacie.</p>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Chambres -->
+      <div class="faq-category">
+        <h2>Les chambres</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">Qu'est-ce qui est inclus dans les chambres ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Toutes nos chambres disposent d'un lit confortable, table et chaise, mini-frigo et une cafeti&egrave;re. Il n'y a pas de t&eacute;l&eacute;visions dans les chambres.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Quelles chambres ont un spa ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Seules les chambres King avec spa ont acc&egrave;s &agrave; leur propre spa ext&eacute;rieur priv&eacute;.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Quelles chambres ont une belle vue sur le fleuve ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Toutes les chambres budget, standard, queen et king ainsi que les mini-refuges ont une belle vue sur le fleuve, certaines mieux que d'autres. Demandez une chambre au deuxi&egrave;me niveau pour une vue plus d&eacute;gag&eacute;e.</p>
+            <p>Les chambres &eacute;conomiques, le dortoir et les doubles avec salle de bain partag&eacute;e n'ont PAS de vue sur le fleuve.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Y a-t-il des frais pour les personnes suppl&eacute;mentaires ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Oui. Le nombre de personnes inclus correspond au nombre de lits. Une chambre avec 1 lit inclut 2 personnes, une chambre avec 2 lits inclut 4 personnes.</p>
+            <p>Personne suppl&eacute;mentaire : 15,00$ +taxes. Matelas de sol avec literie : 19,00$ +taxes.</p>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Animaux -->
+      <div class="faq-category">
+        <h2>Les animaux</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">Les animaux sont-ils accept&eacute;s ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Oui, dans certaines chambres sp&eacute;cifiques seulement : Queen, Quadruple standard, Quadruple &eacute;conomique.</p>
+            <p>Contactez-nous par t&eacute;l&eacute;phone ou messagerie pour r&eacute;server avec votre compagnon &agrave; quatre pattes. Frais suppl&eacute;mentaire de 15,00$ +taxes par nuit&eacute;e.</p>
+            <p>Les animaux doivent &ecirc;tre en laisse en tout temps. Ils ne sont pas admis dans les espaces communs int&eacute;rieurs, &agrave; la piscine ou sur la terrasse.</p>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Camping -->
+      <div class="faq-category">
+        <h2>Camping &amp; Van Life</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">Qu'est-ce qui est inclus avec le camping ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Espaces gazonn&eacute;s &agrave; ciel ouvert, sans &eacute;lectricit&eacute; ni eau. Apportez votre propre tente. 2 personnes par tente (frais suppl&eacute;mentaires pour plus de 2).</p>
+            <p>Inclus : acc&egrave;s &agrave; la piscine, terrasse, BBQ commun, espace feu ext&eacute;rieur, toilettes et douches, cuisine commune, espace de coworking. WiFi disponible pr&egrave;s du b&acirc;timent principal.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Quelle est la taille maximale pour les vans ? <span class="arrow">&#9660;</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>23 pieds maximum. Aucun branchement d'eau ni d'&eacute;lectricit&eacute; n'est disponible. Vous aurez acc&egrave;s &agrave; tous les m&ecirc;mes services que pour une chambre &agrave; l'auberge.</p>
+          </div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-dark text-center">
+    <div class="container">
+      <h2>Vous avez d'autres questions ?</h2>
+      <p style="max-width: 480px; margin: 16px auto 28px; color: var(--text-light);">N'h&eacute;sitez pas &agrave; nous contacter, nous serons ravis de vous aider.</p>
+      <a href="/contact.html" class="btn-book" style="font-size: 1rem; padding: 14px 36px;">Contactez-nous</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Auberge de nos A&iuml;eux" height="32" style="filter: brightness(2);">
+          <p>Une vue incomparable sur le fleuve, l'Isle-aux-Coudres et les montagnes de Charlevoix depuis les ann&eacute;es 1950.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explorer</h4>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/chambres.html">Chambres</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/a-propos.html">&Agrave; propos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Infos pratiques</h4>
+          <ul>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener">R&eacute;server</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+15813336633">(581) 333-6633</a></li>
+            <li><a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a></li>
+            <li style="color:var(--text-light); font-size:0.85rem; margin-top:8px;">2178 Route du Fleuve<br>Les &Eacute;boulements, QC<br>G0A 2M0</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Auberge de nos A&iuml;eux &mdash; CITQ: 066986 &ndash; 627706</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" aria-label="Facebook">&#x1F310;</a>
+          <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" aria-label="Instagram">&#x1F4F7;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="mobile-nav.js" defer></script>
+<script>
+(function() {
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+      // Toggle clicked
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
