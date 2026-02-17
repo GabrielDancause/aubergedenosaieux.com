@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &mdash; Auberge de nos A&iuml;eux</title>
+  <meta name="description" content="Contact Auberge de nos A&iuml;eux in Les &Eacute;boulements, Charlevoix. Phone, email and contact form.">
+  <link rel="canonical" href="https://aubergedenosaieux.com/en/contact.html">
+  <link rel="alternate" hreflang="fr" href="https://aubergedenosaieux.com/contact.html">
+  <link rel="alternate" hreflang="en" href="https://aubergedenosaieux.com/en/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .contact-hero {
+      background: var(--green-dark);
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .contact-hero h1 { color: var(--cream); margin-bottom: 12px; }
+    .contact-hero p { color: var(--text-light); font-size: 1.05rem; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info h3 { margin-bottom: 20px; }
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .contact-detail .icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contact-detail .info h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+    .contact-detail .info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .contact-detail .info a {
+      color: var(--green-mid);
+      font-weight: 500;
+    }
+
+    .contact-form h3 { margin-bottom: 20px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(44,62,45,0.15);
+      border-radius: var(--radius-sm);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      background: var(--white);
+      color: var(--text);
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-top: 32px;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/en/"><img class="nav-logo" src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/en/rooms.html">Rooms</a></li>
+      <li><a href="/en/services.html">Services</a></li>
+      <li><a href="/en/about.html">About</a></li>
+      <li><a href="/en/faq.html">FAQ</a></li>
+      <li><a href="/en/contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/contact.html" class="lang-toggle">FR</a>
+      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>We're here to answer your questions</p>
+  </div>
+
+  <section class="section section-cream">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+
+          <div class="contact-detail">
+            <span class="icon">&#128205;</span>
+            <div class="info">
+              <h4>Address</h4>
+              <p>2178 Route du Fleuve<br>Les &Eacute;boulements, QC<br>Canada, G0A 2M0</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="icon">&#128222;</span>
+            <div class="info">
+              <h4>Phone</h4>
+              <p><a href="tel:+15813336633">(581) 333-6633</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="icon">&#9993;</span>
+            <div class="info">
+              <h4>Email</h4>
+              <p><a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="icon">&#128339;</span>
+            <div class="info">
+              <h4>Support Hours</h4>
+              <p>Sunday to Thursday: 10am to 6pm<br>Friday and Saturday: 10am to 8pm</p>
+              <p style="margin-top:8px;"><strong>Check-in:</strong> 4pm &nbsp;|&nbsp; <strong>Check-out:</strong> 11am</p>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2660.5!2d-70.3204!3d47.4842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4c89b5a0a0a0a0a1%3A0x1234567890abcdef!2s2178+Route+du+Fleuve%2C+Les+%C3%89boulements%2C+QC+G0A+2M0!5e0!3m2!1sfr!2sca!4v1700000000000!5m2!1sfr!2sca" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of the inn"></iframe>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Ask Us Your Question</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Your question or comment..."></textarea>
+            </div>
+            <button type="submit" class="btn-book" style="width:100%; text-align:center; padding: 14px;">Send</button>
+            <p class="form-status" style="display:none; margin-top:14px; font-size:0.85rem; text-align:center;"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="32" style="filter: brightness(2);">
+          <p>An incomparable view of the river, Isle-aux-Coudres and the Charlevoix mountains since the 1950s.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/rooms.html">Rooms</a></li>
+            <li><a href="/en/services.html">Services</a></li>
+            <li><a href="/en/about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Practical Info</h4>
+          <ul>
+            <li><a href="/en/faq.html">FAQ</a></li>
+            <li><a href="/en/contact.html">Contact</a></li>
+            <li><a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+15813336633">(581) 333-6633</a></li>
+            <li><a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a></li>
+            <li style="color:var(--text-light); font-size:0.85rem; margin-top:8px;">2178 Route du Fleuve<br>Les &Eacute;boulements, QC<br>G0A 2M0</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Auberge de nos A&iuml;eux &mdash; CITQ: 066986 &ndash; 627706</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" aria-label="Facebook">&#x1F310;</a>
+          <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" aria-label="Instagram">&#x1F4F7;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="../mobile-nav.js" defer></script>
+<script>
+(function() {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var status = form.querySelector('.form-status');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    // For now, simulate send — replace with real endpoint later
+    setTimeout(function() {
+      status.style.display = 'block';
+      status.style.color = 'var(--green-dark)';
+      status.textContent = 'Thank you! We will get back to you as soon as possible.';
+      form.querySelector('#name').value = '';
+      form.querySelector('#email').value = '';
+      form.querySelector('#message').value = '';
+      btn.textContent = 'Send';
+      btn.disabled = false;
+    }, 1000);
+  });
+})();
+</script>
+</body>
+</html>

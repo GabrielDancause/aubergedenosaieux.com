@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Accommodations &mdash; Auberge de nos A&iuml;eux</title>
+  <meta name="description" content="Rooms, apartments, loft, mini-cabins, dormitory, camping and van life at Auberge de nos A&iuml;eux, Les &Eacute;boulements, Charlevoix.">
+  <meta property="og:title" content="Our Accommodations &mdash; Auberge de nos A&iuml;eux">
+  <meta property="og:description" content="Discover our motel rooms, apartments, artistic loft, mini-cabins, dormitory, camping and van life spaces with views of the St. Lawrence River.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aubergedenosaieux.com/en/rooms.html">
+  <meta property="og:image" content="https://aubergedenosaieux.com/images/rooms/king-room.jpg">
+  <link rel="canonical" href="https://aubergedenosaieux.com/en/rooms.html">
+  <link rel="alternate" hreflang="fr" href="https://aubergedenosaieux.com/chambres.html">
+  <link rel="alternate" hreflang="en" href="https://aubergedenosaieux.com/en/rooms.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ========================================
+       Chambres Page — Specific Styles
+       ======================================== */
+    .room-section {
+      padding: 80px 0;
+    }
+    .room-section-cream { background: var(--cream); }
+    .room-section-white { background: var(--white); }
+
+    .room-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .room-row.reverse .room-img-col { order: 2; }
+    .room-row.reverse .room-text-col { order: 1; }
+
+    .room-img-col img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .room-text-col .room-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .room-text-col h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      color: var(--green-dark);
+    }
+    .room-text-col p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .room-features {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .room-features li {
+      background: var(--green-dark);
+      color: var(--cream);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.01em;
+    }
+
+    .room-section-cream .room-features li {
+      background: var(--white);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .room-section-white .room-features li {
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    /* Quick-nav strip */
+    .room-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .room-nav-inner {
+      display: flex;
+      gap: 8px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .room-nav a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.15s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .room-nav a:hover {
+      background: var(--gold);
+      color: var(--green-dark);
+      border-color: var(--gold);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .room-row {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .room-row.reverse .room-img-col { order: 1; }
+      .room-row.reverse .room-text-col { order: 2; }
+      .room-section { padding: 48px 0; }
+      .room-text-col h3 { font-size: 1.5rem; }
+      .room-img-col img { height: 260px; }
+    }
+    @media (max-width: 480px) {
+      .room-row { padding: 0 16px; }
+      .room-img-col img { height: 220px; }
+      .room-nav-inner { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/en/"><img class="nav-logo" src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/en/rooms.html" class="active">Rooms</a></li>
+      <li><a href="/en/services.html">Services</a></li>
+      <li><a href="/en/about.html">About</a></li>
+      <li><a href="/en/faq.html">FAQ</a></li>
+      <li><a href="/en/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/chambres.html" class="lang-toggle">FR</a>
+      <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('../images/rooms/room-5.jpg')"></div>
+    <div class="hero-content">
+      <h1>Our Accommodations</h1>
+      <p class="tagline">Rooms and accommodations</p>
+      <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <div class="room-nav">
+    <div class="room-nav-inner">
+      <a href="#appartement">Apartments</a>
+      <a href="#loft">Artistic Loft</a>
+      <a href="#studio">Family Studio</a>
+      <a href="#motel">Motel</a>
+      <a href="#auberge">Hostel</a>
+      <a href="#refuges">Mini-Cabins</a>
+      <a href="#dortoir">Dormitory</a>
+      <a href="#camping">Camping</a>
+      <a href="#vanlife">Van Life</a>
+    </div>
+  </div>
+
+  <!-- ========================================
+       Apartments
+       ======================================== -->
+  <section id="appartement" class="room-section room-section-cream">
+    <div class="room-row">
+      <div class="room-img-col">
+        <img src="../images/rooms/apartment-living.jpg" alt="Apartment with bright living room and river view" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">Affordable and spacious</div>
+        <h3>Apartments</h3>
+        <p>
+          The two-bedroom apartment is located on the second floor of the main building. It features two private bedrooms, two living rooms, a fully equipped kitchen and a full bathroom. The space is filled with windows offering an incredible view from the kitchen and living room. Perfect for a family or a group of friends.
+        </p>
+        <p>
+          The one-bedroom apartment is a charming converted unit with a bright living room, a sofa bed to accommodate up to 4 guests, a private kitchen and a terrace with a breathtaking view of the river and mountains. Ideal for remote workers, couple getaways or small families.
+        </p>
+        <ul class="room-features">
+          <li>Private kitchen</li>
+          <li>River view</li>
+          <li>2 to 6 guests</li>
+          <li>Terrace</li>
+          <li>Long-term stays</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Artistic Loft
+       ======================================== -->
+  <section id="loft" class="room-section room-section-white">
+    <div class="room-row reverse">
+      <div class="room-img-col">
+        <img src="../images/rooms/room-4.jpg" alt="Artistic loft with mezzanine and artistic details" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">A piece of history</div>
+        <h3>Artistic Loft</h3>
+        <p>
+          Did you know that Auberge de nos A&iuml;eux was known as a paradise for artists? The inn was the preferred destination for artists who would settle in to draw inspiration from the stunning views of Isle-aux-Coudres, Le Massif and the ferry crossing.
+        </p>
+        <p>
+          We have transformed this former workshop into a beautiful and peaceful artistic loft. The large space is filled with artistic details created by our talented staff. Accommodates up to 4 guests, with a second double bed on the mezzanine. Large windows offering a magnificent view and great natural light, with a private kitchen.
+        </p>
+        <ul class="room-features">
+          <li>Mezzanine</li>
+          <li>Private kitchen</li>
+          <li>Up to 4 guests</li>
+          <li>Artistic details</li>
+          <li>Large windows</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Family Studio
+       ======================================== -->
+  <section id="studio" class="room-section room-section-cream">
+    <div class="room-row">
+      <div class="room-img-col">
+        <img src="../images/rooms/studio-family-1.jpg" alt="Family Studio with two beds, sofa and kitchenette" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">The most charming basement in the region</div>
+        <h3>Family Studio</h3>
+        <p>
+          Formerly the inn's game room, this studio has been transformed into a warm and functional space for families. Located in the basement of the building facing the pool, it offers everything you need for a comfortable stay.
+        </p>
+        <p>
+          With its two beds, sofa and kitchenette, it is the ideal option for families looking for a private space at an affordable price. Direct access to the pool and all of the inn's common areas.
+        </p>
+        <ul class="room-features">
+          <li>Ideal for families</li>
+          <li>Kitchenette</li>
+          <li>Near the pool</li>
+          <li>Two beds + sofa</li>
+          <li>Common areas included</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Motel Rooms
+       ======================================== -->
+  <section id="motel" class="room-section room-section-white">
+    <div class="room-row reverse">
+      <div class="room-img-col">
+        <img src="../images/rooms/king-room.jpg" alt="King motel room with warm decor" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">Privacy and comfort</div>
+        <h3>Motel Rooms</h3>
+        <p>
+          Located all around the inn, approximately forty private rooms offer you optimal privacy. Various room types are available to suit all needs and budgets.
+        </p>
+        <p>
+          From standard to superior, including king with balcony or king with spa options &mdash; plenty of choices to suit everyone!
+        </p>
+        <ul class="room-features">
+          <li>Standard double</li>
+          <li>Standard queen</li>
+          <li>Superior queen</li>
+          <li>King + balcony</li>
+          <li>King + spa</li>
+          <li>Quadruple</li>
+          <li>~40 rooms</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Hostel Rooms
+       ======================================== -->
+  <section id="auberge" class="room-section room-section-cream">
+    <div class="room-row">
+      <div class="room-img-col">
+        <img src="../images/rooms/room-1.jpg" alt="Hostel room in the historic building" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">Historic charm</div>
+        <h3>Hostel Rooms</h3>
+        <p>
+          Located in the main building, where all the common areas are found. Ideal for travellers on a budget. This historic building, while its insulation may not be the best, is full of charm.
+        </p>
+        <p>
+          You will find mostly rooms with shared bathrooms, one room with a small private bathroom, as well as access to all the inn's common areas.
+        </p>
+        <ul class="room-features">
+          <li>Main building</li>
+          <li>Shared bathroom</li>
+          <li>Budget-friendly</li>
+          <li>Historic charm</li>
+          <li>Common areas</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Mini-Cabins
+       ======================================== -->
+  <section id="refuges" class="room-section room-section-white">
+    <div class="room-row reverse">
+      <div class="room-img-col">
+        <img src="../images/rooms/refuge.jpg" alt="Mini-cabin with view of the St. Lawrence River" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">Cozy and intimate</div>
+        <h3>Mini-Cabins</h3>
+        <p>
+          The perfect accommodation for a relaxing retreat. The mini-cabin is a room with a double bed, offering a magnificent view of the St. Lawrence River.
+        </p>
+        <p>
+          You can enjoy a nearby picnic table to savour your meals outdoors. The cabin gives you access to all the inn's common areas. Simple, intimate and refreshing.
+        </p>
+        <ul class="room-features">
+          <li>Double bed</li>
+          <li>River view</li>
+          <li>Picnic table</li>
+          <li>Common areas included</li>
+          <li>Relaxing retreat</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Dormitory
+       ======================================== -->
+  <section id="dortoir" class="room-section room-section-cream">
+    <div class="room-row">
+      <div class="room-img-col">
+        <img src="../images/rooms/dorm.jpg" alt="Mixed dormitory with bunk beds" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">Mixed dormitory</div>
+        <h3>Dormitory</h3>
+        <p>
+          The ideal option for backpackers. Our dormitory is a comfortable and friendly space, perfect for travellers who want to meet others and share experiences.
+        </p>
+        <p>
+          With its 10 beds, it offers a lively atmosphere and an opportunity to socialize with travellers from around the world. You will also have access to all the inn's facilities and amenities.
+        </p>
+        <ul class="room-features">
+          <li>10 beds</li>
+          <li>Mixed</li>
+          <li>Budget-friendly</li>
+          <li>Social atmosphere</li>
+          <li>Full access</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Tent Camping
+       ======================================== -->
+  <section id="camping" class="room-section room-section-white">
+    <div class="room-row reverse">
+      <div class="room-img-col">
+        <img src="../images/hero-landscape.jpg" alt="Camping area with views of the Charlevoix landscape" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">A new adventure</div>
+        <h3>Tent Camping</h3>
+        <p>
+          Bring your own tent! The campground is located on a quiet grassy area. A lovely, accessible space for a simple, easy and hassle-free camping experience. About ten sites ready to welcome you.
+        </p>
+        <p>
+          Open-air sites, 2 people per tent. Renting a campsite gives you access to the same services as renting a room at the inn.
+        </p>
+        <ul class="room-features">
+          <li>Open-air sites</li>
+          <li>Pool access</li>
+          <li>Shared BBQ</li>
+          <li>Panoramic terrace</li>
+          <li>Common kitchen</li>
+          <li>Pets welcome</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Van Life
+       ======================================== -->
+  <section id="vanlife" class="room-section room-section-cream">
+    <div class="room-row">
+      <div class="room-img-col">
+        <img src="../images/rooms/room-8.jpg" alt="Parking spaces for converted vehicles" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="room-text-col">
+        <div class="room-label">Spaces for vanlifers</div>
+        <h3>Van Life</h3>
+        <p>
+          Several parking spaces available for converted vehicles (23 feet maximum). Renting a space gives you access to the same services as renting a room at the inn.
+        </p>
+        <p>
+          Open-air spaces with a community atmosphere. Please note that no water or electrical hookups are available at the parking spots. Access to washrooms, showers, pool, terrace and co-working.
+        </p>
+        <ul class="room-features">
+          <li>23 ft max</li>
+          <li>Pool access</li>
+          <li>Co-working</li>
+          <li>Wi-Fi</li>
+          <li>Showers</li>
+          <li>Pets welcome</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="32" style="filter: brightness(2);">
+          <p>An unparalleled view of the river, Isle-aux-Coudres and the Charlevoix mountains since the 1950s.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/rooms.html">Rooms</a></li>
+            <li><a href="/en/services.html">Services</a></li>
+            <li><a href="/en/about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Useful Info</h4>
+          <ul>
+            <li><a href="/en/faq.html">FAQ</a></li>
+            <li><a href="/en/contact.html">Contact</a></li>
+            <li><a href="https://hotels.cloudbeds.com/en/reservation/FjrK2q" target="_blank" rel="noopener">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+15813336633">(581) 333-6633</a></li>
+            <li><a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a></li>
+            <li style="color:var(--text-light); font-size:0.85rem; margin-top:8px;">2178 Route du Fleuve<br>Les &Eacute;boulements, QC<br>G0A 2M0</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Auberge de nos A&iuml;eux &mdash; CITQ: 066986 &ndash; 627706</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" aria-label="Facebook">&#x1F310;</a>
+          <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" aria-label="Instagram">&#x1F4F7;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="../mobile-nav.js" defer></script>
+</body>
+</html>

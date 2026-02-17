@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services &amp; Amenities &mdash; Auberge de nos A&iuml;eux</title>
+  <meta name="description" content="Discover the services and amenities at Auberge de nos A&iuml;eux: shared kitchen, pool, coworking, fireplace, panoramic terrace and more.">
+  <meta property="og:title" content="Services &amp; Amenities &mdash; Auberge de nos A&iuml;eux">
+  <meta property="og:description" content="Shared kitchen, pool, coworking, fireplace, terrace and free WiFi. Everything you need for a memorable stay in Charlevoix.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aubergedenosaieux.com/en/services.html">
+  <meta property="og:image" content="https://aubergedenosaieux.com/images/about/property.jpg">
+  <link rel="canonical" href="https://aubergedenosaieux.com/en/services.html">
+  <link rel="alternate" hreflang="fr" href="https://aubergedenosaieux.com/services.html">
+  <link rel="alternate" hreflang="en" href="https://aubergedenosaieux.com/en/services.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="../images/about/property.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ========================================
+       Services Page — Specific Styles
+       ======================================== */
+
+    /* Services Grid: alternating image + text rows */
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .service-row:last-child {
+      margin-bottom: 0;
+    }
+    .service-row.reverse .service-img {
+      order: 2;
+    }
+    .service-row.reverse .service-text {
+      order: 1;
+    }
+    .service-img img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+    }
+    .service-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .service-text p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* Quick amenities strip */
+    .services-quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .services-quick-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .services-quick-item .sq-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .services-quick-item h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+    .services-quick-item p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    /* Long-stay promo banner */
+    .promo-banner {
+      background: var(--green-dark);
+      padding: 72px 0;
+      color: var(--text-light);
+    }
+    .promo-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .promo-banner h2 {
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .promo-banner .promo-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .promo-banner p {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .promo-details {
+      list-style: none;
+      padding: 0;
+    }
+    .promo-details li {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .promo-details li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .promo-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 700;
+      padding: 32px 40px;
+      border-radius: var(--radius);
+      text-align: center;
+      line-height: 1.1;
+    }
+    .promo-badge span {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .service-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+      .service-row.reverse .service-img,
+      .service-row.reverse .service-text {
+        order: unset;
+      }
+      .service-img img {
+        height: 260px;
+      }
+      .promo-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+      .promo-badge {
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 600px) {
+      .services-quick-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-img img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/en/"><img class="nav-logo" src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/en/rooms.html">Rooms</a></li>
+      <li><a href="/en/services.html" class="active">Services</a></li>
+      <li><a href="/en/about.html">About</a></li>
+      <li><a href="/en/faq.html">FAQ</a></li>
+      <li><a href="/en/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/services.html" class="lang-toggle">FR</a>
+      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('../images/about/property.jpg')"></div>
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p class="tagline">Everything you need for a memorable stay</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section section-cream">
+    <div class="container text-center">
+      <h2>Gathering spaces</h2>
+      <p style="max-width:680px; margin:16px auto 0; font-size:1.02rem; color:var(--text-muted); line-height:1.75;">
+        Our common areas are gathering spaces where travellers, families and remote workers meet. From the shared kitchen to the panoramic terrace, every corner of the inn is designed to make you feel at home.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services — Alternating Grid -->
+  <section class="section section-white">
+    <div class="container">
+
+      <!-- 1. Common Spaces -->
+      <div class="service-row">
+        <div class="service-img">
+          <img src="../images/amenities/common-kitchen.jpg" alt="Common spaces &mdash; kitchen and dining room" loading="lazy" width="1200" height="800">
+        </div>
+        <div class="service-text">
+          <span class="service-icon">&#127968;</span>
+          <h3>Common Spaces</h3>
+          <p>
+            Kitchen, dining room, stone fireplace lounge and shared bathrooms: our common spaces are designed to encourage connection and relaxation. Whether you're preparing a meal with friends or reading a book by the fire, you'll always find a welcoming spot.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Common Kitchen -->
+      <div class="service-row reverse">
+        <div class="service-img">
+          <img src="../images/amenities/kitchen.jpg" alt="Fully equipped common kitchen" loading="lazy" width="1200" height="800">
+        </div>
+        <div class="service-text">
+          <span class="service-icon">&#127859;</span>
+          <h3>Common Kitchen</h3>
+          <p>
+            Fully equipped with a stove, microwave, coffee maker, air fryer, dishes and utensils. We don't have a restaurant, but our kitchen is entirely at your disposal to prepare your best meals with local Charlevoix products.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. Outdoor Pool -->
+      <div class="service-row">
+        <div class="service-img">
+          <img src="../images/about/property.jpg" alt="Aerial view of the property with pool" loading="lazy" width="1200" height="800">
+        </div>
+        <div class="service-text">
+          <span class="service-icon">&#127946;</span>
+          <h3>Outdoor Pool</h3>
+          <p>
+            Open from June 15 to October 15, our outdoor pool is the perfect spot to cool off after a day of hiking or simply enjoy the Charlevoix sunshine with a view of the mountains.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4. Indoor & Outdoor Fireplace -->
+      <div class="service-row reverse">
+        <div class="service-img">
+          <img src="../images/hero-night.jpg" alt="Outdoor fireplace under the stars" loading="lazy" width="1200" height="800">
+        </div>
+        <div class="service-text">
+          <span class="service-icon">&#128293;</span>
+          <h3>Indoor &amp; Outdoor Fireplace</h3>
+          <p>
+            Enjoy our beautiful stone fireplace inside the lounge on cool evenings, or gather around the outdoor campfire under the stars. The perfect place to share stories with fellow travellers.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. Coworking -->
+      <div class="service-row">
+        <div class="service-img">
+          <img src="../images/about/general-6.jpg" alt="Coworking space with a view" loading="lazy" width="1200" height="800">
+        </div>
+        <div class="service-text">
+          <span class="service-icon">&#128187;</span>
+          <h3>Coworking</h3>
+          <p>
+            Work during the day, unwind in nature in the evening. With the fastest WiFi in the region and quiet spaces to work, the inn is the ideal place for remote workers and digital nomads.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6. Outdoor Terrace -->
+      <div class="service-row reverse">
+        <div class="service-img">
+          <img src="../images/hero-landscape.jpg" alt="Outdoor terrace with river view" loading="lazy" width="1200" height="800">
+        </div>
+        <div class="service-text">
+          <span class="service-icon">&#9728;&#65039;</span>
+          <h3>Outdoor Terrace</h3>
+          <p>
+            Happy hours, music nights and the best sunsets in Charlevoix. Our panoramic terrace offers a breathtaking view of the St. Lawrence River and Isle-aux-Coudres. Our visitors' favourite spot.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Quick Amenities Strip -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: 40px;">Also Included</h2>
+      <div class="services-quick-grid">
+
+        <div class="services-quick-item">
+          <span class="sq-icon">&#128230;</span>
+          <div>
+            <h4>Self-service Reception</h4>
+            <p>Self check-in. Toiletries, bedding, soap, shampoo and coffee provided complimentary.</p>
+          </div>
+        </div>
+
+        <div class="services-quick-item">
+          <span class="sq-icon">&#10052;&#65039;</span>
+          <div>
+            <h4>Air Conditioning</h4>
+            <p>Some rooms are equipped with air conditioning for your comfort during the summer.</p>
+          </div>
+        </div>
+
+        <div class="services-quick-item">
+          <span class="sq-icon">&#127769;</span>
+          <div>
+            <h4>Observatory</h4>
+            <p>A unique viewpoint of the St. Lawrence River, Isle-aux-Coudres and the Charlevoix mountains.</p>
+          </div>
+        </div>
+
+        <div class="services-quick-item">
+          <span class="sq-icon">&#128246;</span>
+          <div>
+            <h4>Free WiFi</h4>
+            <p>The fastest internet in the region, ideal for remote work and video calls.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Long-Stay Promotion Banner -->
+  <section class="promo-banner">
+    <div class="promo-inner">
+      <div>
+        <h2>Extended Stays</h2>
+        <p class="promo-subtitle">Stay longer, pay less</p>
+        <p>Enjoy an exclusive discount for stays of 5 nights or more during the off-season. Ideal for remote workers, creative retreats or simply disconnecting a little longer.</p>
+        <ul class="promo-details">
+          <li>Off-season only: October 13 to June 5</li>
+          <li>Valid for queen, king and standard quadruple rooms</li>
+          <li>Weekly and bi-weekly rates are non-refundable</li>
+        </ul>
+        <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book" style="margin-top: 24px;">Check Availability</a>
+      </div>
+      <div class="text-center">
+        <div class="promo-badge">
+          &minus;20%
+          <span>5 nights or more</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="32" style="filter: brightness(2);">
+          <p>An unparalleled view of the river, Isle-aux-Coudres and the Charlevoix mountains since 1950.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/rooms.html">Rooms</a></li>
+            <li><a href="/en/services.html">Services</a></li>
+            <li><a href="/en/about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Useful Info</h4>
+          <ul>
+            <li><a href="/en/faq.html">FAQ</a></li>
+            <li><a href="/en/contact.html">Contact</a></li>
+            <li><a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+15813336633">(581) 333-6633</a></li>
+            <li><a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a></li>
+            <li style="color:var(--text-light); font-size:0.85rem; margin-top:8px;">2178 Route du Fleuve<br>Les &Eacute;boulements, QC<br>G0A 2M0</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Auberge de nos A&iuml;eux &mdash; CITQ: 066986 &ndash; 627706</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" aria-label="Facebook">&#x1F310;</a>
+          <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" aria-label="Instagram">&#x1F4F7;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="../mobile-nav.js" defer></script>
+</body>
+</html>

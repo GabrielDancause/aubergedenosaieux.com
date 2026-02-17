@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &mdash; Auberge de nos A&iuml;eux</title>
+  <meta name="description" content="Discover the story of Auberge de nos A&iuml;eux, a legendary institution in Les &Eacute;boulements since the 1950s. Our mission, our vision and our future projects.">
+  <meta property="og:title" content="About &mdash; Auberge de nos A&iuml;eux">
+  <meta property="og:description" content="A legendary institution in Les &Eacute;boulements since the 1950s. Discover our story, our mission and our vision.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aubergedenosaieux.com/en/about.html">
+  <meta property="og:image" content="https://aubergedenosaieux.com/images/about/property.jpg">
+  <link rel="canonical" href="https://aubergedenosaieux.com/en/about.html">
+  <link rel="alternate" hreflang="fr" href="https://aubergedenosaieux.com/a-propos.html">
+  <link rel="alternate" hreflang="en" href="https://aubergedenosaieux.com/en/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="../images/about/property.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ========================================
+       About Page — Specific Styles
+       ======================================== */
+
+    /* Hero (shorter variant with background image) */
+    .about-hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .about-hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .about-hero .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(44,62,45,0.5) 0%, rgba(44,62,45,0.7) 100%);
+    }
+    .about-hero .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 24px;
+      max-width: 700px;
+    }
+    .about-hero h1 {
+      color: var(--cream);
+      font-size: 3.2rem;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .about-hero .tagline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(250, 247, 240, 0.9);
+      margin-bottom: 0;
+    }
+
+    /* History section */
+    .history-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .history-text h2 {
+      margin-bottom: 16px;
+    }
+    .history-text p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .history-text p:last-child {
+      margin-bottom: 0;
+    }
+    .history-images {
+      display: grid;
+      gap: 16px;
+    }
+    .history-images img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Mission highlight card */
+    .mission-card {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .mission-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .mission-card h2 {
+      margin-bottom: 16px;
+    }
+    .mission-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 0;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Vision section */
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .vision-text h2 {
+      margin-bottom: 16px;
+    }
+    .vision-text p {
+      font-size: 1.02rem;
+      color: var(--text-light);
+      line-height: 1.75;
+    }
+    .vision-text p:last-child {
+      margin-bottom: 0;
+    }
+    .vision-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .vision-image img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Photo gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-grid img {
+      border-radius: var(--radius);
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery-grid img:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .gallery-grid img:nth-child(1) {
+      grid-column: span 2;
+      height: 280px;
+    }
+    .gallery-grid img:nth-child(5) {
+      grid-column: span 2;
+      height: 280px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-hero { min-height: 40vh; }
+      .about-hero h1 { font-size: 2.6rem; }
+      .history-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .vision-image { order: -1; }
+      .mission-card {
+        padding: 36px 24px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .gallery-grid img {
+        height: 180px;
+      }
+      .gallery-grid img:nth-child(1),
+      .gallery-grid img:nth-child(5) {
+        grid-column: span 2;
+        height: 220px;
+      }
+    }
+    @media (max-width: 600px) {
+      .about-hero h1 { font-size: 2.2rem; }
+      .about-hero .tagline { font-size: 1rem; }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid img,
+      .gallery-grid img:nth-child(1),
+      .gallery-grid img:nth-child(5) {
+        grid-column: span 1;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="/en/"><img class="nav-logo" src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="36"></a>
+    <ul class="nav-links">
+      <li><a href="/en/rooms.html">Rooms</a></li>
+      <li><a href="/en/services.html">Services</a></li>
+      <li><a href="/en/about.html" class="active">About</a></li>
+      <li><a href="/en/faq.html">FAQ</a></li>
+      <li><a href="/en/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/a-propos.html" class="lang-toggle">FR</a>
+      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="hero-bg" style="background-image: url('../images/about/property.jpg')"></div>
+    <div class="hero-content">
+      <h1>Our Story</h1>
+      <p class="tagline">A legendary institution in Les &Eacute;boulements since the 1950s</p>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="history-grid">
+        <div class="history-text">
+          <h2>Auberge de nos A&iuml;eux</h2>
+          <p>
+            Auberge de nos A&iuml;eux is a now legendary institution in Les &Eacute;boulements. Open since the 1950s by the Tremblay family, it has built a reputation as a place where life is good, thanks to its warm atmosphere, communal table, and friendly conversations around the fireplace in winter and by the pool in summer.
+          </p>
+          <p>
+            Located on Route du Fleuve, the inn overlooks a breathtaking panorama of the St. Lawrence River, Isle-aux-Coudres and the Charlevoix mountains. A place where time seems to stand still and where each season reveals a new face of the region.
+          </p>
+        </div>
+        <div class="history-images">
+          <img src="../images/about/property.jpg" alt="Aerial view of Auberge de nos A&iuml;eux" width="800" height="600">
+          <img src="../images/about/exterior.jpg" alt="Facade of Auberge de nos A&iuml;eux" loading="lazy" width="800" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="mission-card">
+        <span class="mission-icon">&#9733;</span>
+        <h2>Our Mission</h2>
+        <p>
+          To host travellers, nomads and freelancers in an enchanting and gathering place, allowing them to create connections and better balance vacation and professional activities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="vision-grid">
+        <div class="vision-text">
+          <span class="vision-badge">Upcoming Project</span>
+          <h2>Our Vision</h2>
+          <p>
+            The camping and micro-houses site &mdash; we are currently working on designing a campground and a micro-house village that will be located in the valley of the Auberge property, near the forest.
+          </p>
+          <p>
+            This innovative project will offer a unique nature lodging experience while preserving the charm and community spirit that have made the inn renowned for over seven decades.
+          </p>
+        </div>
+        <div class="vision-image">
+          <img src="../images/about/general-3.jpg" alt="The Auberge de nos A&iuml;eux property, future site of the micro-houses" loading="lazy" width="800" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: 40px;">Our Property</h2>
+      <div class="gallery-grid">
+        <img src="../images/about/general-2.jpg" alt="Auberge de nos A&iuml;eux &mdash; general view" loading="lazy" width="800" height="600">
+        <img src="../images/about/general-3.jpg" alt="Grounds and outdoor spaces" loading="lazy" width="800" height="600">
+        <img src="../images/about/general-5.jpg" alt="Outdoor amenities" loading="lazy" width="800" height="600">
+        <img src="../images/about/general-6.jpg" alt="Common areas of the inn" loading="lazy" width="800" height="600">
+        <img src="../images/about/general-8.jpg" alt="Panoramic view of the river" loading="lazy" width="800" height="600">
+        <img src="../images/about/general-9.jpg" alt="Natural surroundings of the property" loading="lazy" width="800" height="600">
+        <img src="../images/about/general-11.jpg" alt="Landscape at Auberge de nos A&iuml;eux" loading="lazy" width="800" height="600">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Auberge de nos A&iuml;eux" height="32" style="filter: brightness(2);">
+          <p>An incomparable view of the river, Isle-aux-Coudres and the Charlevoix mountains since the 1950s.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/rooms.html">Rooms</a></li>
+            <li><a href="/en/services.html">Services</a></li>
+            <li><a href="/en/about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Practical Info</h4>
+          <ul>
+            <li><a href="/en/faq.html">FAQ</a></li>
+            <li><a href="/en/contact.html">Contact</a></li>
+            <li><a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+15813336633">(581) 333-6633</a></li>
+            <li><a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a></li>
+            <li style="color:var(--text-light); font-size:0.85rem; margin-top:8px;">2178 Route du Fleuve<br>Les &Eacute;boulements, QC<br>G0A 2M0</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Auberge de nos A&iuml;eux &mdash; CITQ: 066986 &ndash; 627706</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" aria-label="Facebook">&#x1F310;</a>
+          <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" aria-label="Instagram">&#x1F4F7;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="../mobile-nav.js" defer></script>
+</body>
+</html>
