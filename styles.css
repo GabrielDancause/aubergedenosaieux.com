@@ -376,6 +376,48 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ========================================
+   Social Follow Banner
+   ======================================== */
+.social-follow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+.social-follow a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.social-follow a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.social-follow .social-fb {
+  background: #1877F2;
+  color: #fff;
+}
+.social-follow .social-fb:hover { color: #fff; }
+.social-follow .social-ig {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+}
+.social-follow .social-ig:hover { color: #fff; }
+.social-follow svg {
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .social-follow { flex-direction: column; align-items: center; }
+}
+
+/* ========================================
    Newsletter
    ======================================== */
 .newsletter-form {
