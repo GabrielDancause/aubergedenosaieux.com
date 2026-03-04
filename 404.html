@@ -85,7 +85,7 @@
 <script>
 // Smart redirect for old URLs without .html extension
 (function() {
-  var path = window.location.pathname.replace(/\/$/, '');
+  var path = decodeURIComponent(window.location.pathname).replace(/\/$/, '');
   var map = {
     '/chambres': '/chambres.html',
     '/services': '/services.html',
@@ -98,7 +98,13 @@
     '/en/contact': '/en/contact.html',
     '/en/faq': '/en/faq.html',
     '/camping': '/chambres.html#vanlife',
-    '/en/camping': '/en/rooms.html#vanlife'
+    '/en/camping': '/en/rooms.html#vanlife',
+    // Old DudaOne URLs (SEO redirects)
+    '/nos-chambres': '/chambres.html',
+    '/reserver': 'https://hotels.cloudbeds.com/fr/reservation/FjrK2q',
+    '/contactez-nous-auberge-charlevoix': '/contact.html',
+    '/la-vision-de-l-auberge': '/a-propos.html',
+    '/\u00e0-propos': '/a-propos.html'
   };
   if (map[path]) {
     window.location.replace(map[path]);
