@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Design System — Auberge de nos Aïeux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+/* ---- Style-guide chrome only (not part of the product system) ---- */
+body { display: grid; grid-template-columns: 264px 1fr; }
+.sg-side {
+  position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto;
+  border-right: 1px solid var(--line); padding: 28px 24px; background: var(--bone);
+}
+.sg-side .brand { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: 1.05rem; margin-bottom: 4px; }
+.sg-side .ver { font-size: var(--fs-xs); color: var(--muted); margin-bottom: 24px; }
+.sg-side nav a { display: block; font-size: var(--fs-sm); color: var(--ink-2); padding: 7px 10px; border-radius: 8px; }
+.sg-side nav a:hover { background: var(--bone-2); color: var(--ink); }
+.sg-side nav .grp { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--muted); margin: 18px 10px 6px; font-weight: 700; }
+.sg-main { min-width: 0; }
+.sg-block { padding: 56px var(--gutter); border-bottom: 1px solid var(--line); }
+.sg-block > h2 { font-size: 1.9rem; margin-bottom: 6px; }
+.sg-block > .sg-desc { color: var(--muted); font-size: var(--fs-sm); max-width: 62ch; margin-bottom: 32px; }
+.sg-label { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--muted); font-weight: 700; margin: 28px 0 14px; }
+.sg-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.sg-hero-lead { padding: 64px var(--gutter) 24px; }
+.sg-hero-lead .kicker { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--accent); font-weight: 700; }
+.sg-hero-lead h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 10px 0 16px; }
+
+/* swatches */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 14px; }
+.swatch { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--bg); }
+.swatch .chip { height: 76px; }
+.swatch .meta { padding: 10px 12px; }
+.swatch .nm { font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
+.swatch .hex { font-size: var(--fs-xs); color: var(--muted); font-family: ui-monospace, monospace; }
+.swatch .var { font-size: var(--fs-xs); color: var(--muted); font-family: ui-monospace, monospace; }
+
+/* type specimens */
+.type-row { display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: baseline; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+.type-row .tk { font-size: var(--fs-xs); color: var(--muted); font-family: ui-monospace, monospace; }
+
+/* token tables */
+.tok-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 14px; }
+.tok { border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px; }
+.tok .demo { background: var(--accent-soft); border-radius: 8px; margin-bottom: 12px; }
+.tok .nm { font-size: var(--fs-sm); font-weight: 600; }
+.tok .vv { font-size: var(--fs-xs); color: var(--muted); font-family: ui-monospace, monospace; }
+.radius-demo { height: 60px; background: var(--accent-soft); border: 1px solid var(--accent); }
+.shadow-demo { height: 60px; background: var(--bg); border-radius: 12px; margin: 8px; }
+
+/* page-blueprint table */
+.blueprint { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.blueprint th, .blueprint td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.blueprint th { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--muted); }
+.blueprint td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+.mods { display: flex; flex-wrap: wrap; gap: 6px; }
+.mod { font-size: var(--fs-xs); background: var(--bone); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 4px 11px; color: var(--ink-2); }
+
+.demo-frame { border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
+@media (max-width: 860px) {
+  body { grid-template-columns: 1fr; }
+  .sg-side { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--line); }
+  .sg-side nav { columns: 2; }
+}
+</style>
+</head>
+<body>
+
+<!-- =================== SIDEBAR =================== -->
+<aside class="sg-side">
+  <div class="brand">Auberge de nos Aïeux</div>
+  <div class="ver">Design System · v1 · 2026</div>
+  <nav>
+    <div class="grp">Foundations</div>
+    <a href="#colors">Colors</a>
+    <a href="#type">Typography</a>
+    <a href="#tokens">Spacing · Radius · Shadow</a>
+    <div class="grp">Components</div>
+    <a href="#buttons">Buttons</a>
+    <a href="#chips">Eyebrows &amp; badges</a>
+    <a href="#forms">Forms &amp; search bar</a>
+    <a href="#nav">Navigation</a>
+    <a href="#hero">Hero</a>
+    <a href="#sectionhead">Section header</a>
+    <a href="#cards">Cards</a>
+    <a href="#features">Features &amp; stats</a>
+    <a href="#quotes">Testimonials</a>
+    <a href="#footer">Footer</a>
+    <div class="grp">Application</div>
+    <a href="#pages">Page blueprints</a>
+  </nav>
+</aside>
+
+<!-- =================== MAIN =================== -->
+<main class="sg-main">
+
+  <!-- intro -->
+  <header class="sg-hero-lead">
+    <span class="kicker">Living style guide</span>
+    <h1>A modern system for a warm country inn.</h1>
+    <p class="ds-lead">Neutral canvas, big confident type, generous whitespace, and rounded photo-first modules — a full modern redesign. Warmth comes from a single terracotta accent and the photography itself. Every token and module below is production CSS from <code>design-system.css</code>.</p>
+  </header>
+
+  <!-- =============== COLORS =============== -->
+  <section id="colors" class="sg-block">
+    <h2>Colors</h2>
+    <p class="sg-desc">A warm-grey neutral ladder does the heavy lifting. Terracotta clay is the only chromatic accent — used for eyebrows, prices, links, and active states. Ink is both primary text and the primary button.</p>
+
+    <div class="sg-label">Neutrals</div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--bg);border-bottom:1px solid var(--line)"></div><div class="meta"><div class="nm">Background</div><div class="hex">#FFFFFF</div><div class="var">--bg</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--bone)"></div><div class="meta"><div class="nm">Bone</div><div class="hex">#F6F4EF</div><div class="var">--bone</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--bone-2)"></div><div class="meta"><div class="nm">Bone 2</div><div class="hex">#ECE8DF</div><div class="var">--bone-2</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--line)"></div><div class="meta"><div class="nm">Line</div><div class="hex">#E6E2D9</div><div class="var">--line</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--muted)"></div><div class="meta"><div class="nm">Muted</div><div class="hex">#8B887F</div><div class="var">--muted</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ink-2)"></div><div class="meta"><div class="nm">Ink 2</div><div class="hex">#3D3B34</div><div class="var">--ink-2</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="meta"><div class="nm">Ink</div><div class="hex">#181713</div><div class="var">--ink</div></div></div>
+    </div>
+
+    <div class="sg-label">Accent &amp; semantic</div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--accent)"></div><div class="meta"><div class="nm">Accent (clay)</div><div class="hex">#9C5B36</div><div class="var">--accent</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--accent-ink)"></div><div class="meta"><div class="nm">Accent ink</div><div class="hex">#7E4526</div><div class="var">--accent-ink</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--accent-soft)"></div><div class="meta"><div class="nm">Accent soft</div><div class="hex">#F1E6DC</div><div class="var">--accent-soft</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--gold)"></div><div class="meta"><div class="nm">Gold</div><div class="hex">#B08A4F</div><div class="var">--gold</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--success)"></div><div class="meta"><div class="nm">Success</div><div class="hex">#3F6F4E</div><div class="var">--success</div></div></div>
+    </div>
+  </section>
+
+  <!-- =============== TYPOGRAPHY =============== -->
+  <section id="type" class="sg-block">
+    <h2>Typography</h2>
+    <p class="sg-desc">Bricolage Grotesque for display &amp; headings (editorial, warm, high-impact at large sizes). Inter for body &amp; UI. Tight tracking on headings, comfortable 1.6 line-height on body.</p>
+
+    <div class="type-row"><span class="tk">--fs-display<br>clamp→6rem</span><span style="font-family:var(--font-display);font-size:var(--fs-display);font-weight:700;line-height:1;letter-spacing:var(--tracking-tight)">Séjour</span></div>
+    <div class="type-row"><span class="tk">h1 · --fs-h1</span><h1 style="margin:0">Un refuge hors du temps</h1></div>
+    <div class="type-row"><span class="tk">h2 · --fs-h2</span><h2 style="margin:0">Chambres &amp; suites</h2></div>
+    <div class="type-row"><span class="tk">h3 · --fs-h3</span><h3 style="margin:0">Chambre King avec spa privé</h3></div>
+    <div class="type-row"><span class="tk">lead · --fs-lead</span><p class="ds-lead" style="margin:0">Nichée au cœur de la région, l'auberge marie confort contemporain et âme rustique.</p></div>
+    <div class="type-row"><span class="tk">body · --fs-body</span><p style="margin:0;max-width:60ch">Un séjour à l'Auberge de nos Aïeux, c'est retrouver le calme, la nature et une hospitalité sincère — à deux pas des sentiers, du foyer et du spa.</p></div>
+    <div class="type-row"><span class="tk">small · --fs-sm</span><p style="margin:0;font-size:var(--fs-sm);color:var(--muted)">À partir de 189 $ / nuit · 2 voyageurs</p></div>
+    <div class="type-row"><span class="tk">eyebrow · --fs-xs</span><span class="eyebrow">Notre région</span></div>
+  </section>
+
+  <!-- =============== TOKENS =============== -->
+  <section id="tokens" class="sg-block">
+    <h2>Spacing · Radius · Shadow</h2>
+    <p class="sg-desc">A 4-pt spacing scale, oversized radii for the soft modern feel, and low-contrast elevation.</p>
+
+    <div class="sg-label">Radius</div>
+    <div class="tok-grid">
+      <div class="tok"><div class="radius-demo" style="border-radius:var(--r-sm)"></div><div class="nm" style="margin-top:10px">sm</div><div class="vv">10px · --r-sm</div></div>
+      <div class="tok"><div class="radius-demo" style="border-radius:var(--r-md)"></div><div class="nm" style="margin-top:10px">md</div><div class="vv">18px · --r-md</div></div>
+      <div class="tok"><div class="radius-demo" style="border-radius:var(--r-lg)"></div><div class="nm" style="margin-top:10px">lg</div><div class="vv">26px · --r-lg</div></div>
+      <div class="tok"><div class="radius-demo" style="border-radius:var(--r-xl)"></div><div class="nm" style="margin-top:10px">xl</div><div class="vv">34px · --r-xl</div></div>
+      <div class="tok"><div class="radius-demo" style="border-radius:var(--r-pill)"></div><div class="nm" style="margin-top:10px">pill</div><div class="vv">999px · --r-pill</div></div>
+    </div>
+
+    <div class="sg-label">Shadow</div>
+    <div class="tok-grid">
+      <div class="tok" style="background:var(--bone)"><div class="shadow-demo" style="box-shadow:var(--sh-sm)"></div><div class="nm">sm</div><div class="vv">--sh-sm</div></div>
+      <div class="tok" style="background:var(--bone)"><div class="shadow-demo" style="box-shadow:var(--sh-md)"></div><div class="nm">md</div><div class="vv">--sh-md</div></div>
+      <div class="tok" style="background:var(--bone)"><div class="shadow-demo" style="box-shadow:var(--sh-lg)"></div><div class="nm">lg</div><div class="vv">--sh-lg</div></div>
+    </div>
+
+    <div class="sg-label">Spacing scale (4-pt)</div>
+    <div class="sg-row" style="align-items:flex-end">
+      <div style="text-align:center"><div style="width:4px;height:4px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">4</div></div>
+      <div style="text-align:center"><div style="width:8px;height:8px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">8</div></div>
+      <div style="text-align:center"><div style="width:16px;height:16px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">16</div></div>
+      <div style="text-align:center"><div style="width:24px;height:24px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">24</div></div>
+      <div style="text-align:center"><div style="width:32px;height:32px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">32</div></div>
+      <div style="text-align:center"><div style="width:48px;height:48px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">48</div></div>
+      <div style="text-align:center"><div style="width:64px;height:64px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">64</div></div>
+      <div style="text-align:center"><div style="width:80px;height:80px;background:var(--accent)"></div><div class="vv" style="font-size:10px;color:var(--muted);margin-top:6px">80</div></div>
+    </div>
+  </section>
+
+  <!-- =============== BUTTONS =============== -->
+  <section id="buttons" class="sg-block">
+    <h2>Buttons</h2>
+    <p class="sg-desc">Pill-shaped, lift 2px on hover. Ink is primary (like the reference's black CTAs); terracotta for booking emphasis; outline &amp; ghost for secondary.</p>
+    <div class="sg-label">Variants</div>
+    <div class="sg-row">
+      <button class="btn btn--primary">Réserver</button>
+      <button class="btn btn--accent">Vérifier les disponibilités</button>
+      <button class="btn btn--outline">Voir les chambres</button>
+      <button class="btn btn--ghost">En savoir plus →</button>
+    </div>
+    <div class="sg-label">Sizes</div>
+    <div class="sg-row">
+      <button class="btn btn--primary btn--sm">Petit</button>
+      <button class="btn btn--primary">Normal</button>
+      <button class="btn btn--primary btn--lg">Grand</button>
+    </div>
+    <div class="sg-label">On dark</div>
+    <div class="sg-row" style="background:var(--ink);padding:24px;border-radius:var(--r-lg)">
+      <button class="btn btn--onink">Réserver</button>
+      <button class="btn btn--accent">Nous contacter</button>
+    </div>
+  </section>
+
+  <!-- =============== CHIPS =============== -->
+  <section id="chips" class="sg-block">
+    <h2>Eyebrows &amp; badges</h2>
+    <p class="sg-desc">Outline eyebrow pills label every section (with an accent dot). Badges sit on photos to flag availability or category.</p>
+    <div class="sg-label">Eyebrows</div>
+    <div class="sg-row">
+      <span class="eyebrow">Notre auberge</span>
+      <span class="eyebrow">Chambres &amp; suites</span>
+      <span class="eyebrow">Avis vérifiés</span>
+    </div>
+    <div class="sg-label">Badges</div>
+    <div class="sg-row">
+      <span class="badge">Coup de cœur</span>
+      <span class="badge badge--accent">Spa privé</span>
+      <span class="badge badge--success">2 chambres libres</span>
+    </div>
+  </section>
+
+  <!-- =============== FORMS =============== -->
+  <section id="forms" class="sg-block">
+    <h2>Forms &amp; booking bar</h2>
+    <p class="sg-desc">The signature module from the reference — reworked for hospitality. Arrival, departure, guests, then a booking CTA. Floats over the hero on the homepage.</p>
+    <div class="sg-label">Fields</div>
+    <div class="sg-row" style="max-width:520px">
+      <div class="field" style="flex:1"><label>Courriel</label><input class="input" placeholder="vous@exemple.com"></div>
+      <div class="field" style="flex:1"><label>Voyageurs</label><input class="input" value="2 adultes"></div>
+    </div>
+    <div class="sg-label">Booking bar</div>
+    <div class="searchbar">
+      <div class="searchbar__field"><span class="lab">Arrivée</span><span class="val">Ven. 17 juil.</span></div>
+      <div class="searchbar__field"><span class="lab">Départ</span><span class="val">Dim. 19 juil.</span></div>
+      <div class="searchbar__field"><span class="lab">Voyageurs</span><span class="val">2 adultes</span></div>
+      <div class="searchbar__cta"><button class="btn btn--primary">Vérifier</button></div>
+    </div>
+  </section>
+
+  <!-- =============== NAV =============== -->
+  <section id="nav" class="sg-block">
+    <h2>Navigation</h2>
+    <p class="sg-desc">Translucent white, blurred, hairline underline. Logo left, links center-right, language toggle + booking CTA anchored right. Active link carries a terracotta underline.</p>
+    <div class="demo-frame">
+      <nav class="nav" style="position:static">
+        <span class="nav__logo">Auberge de nos Aïeux</span>
+        <ul class="nav__links">
+          <li><a href="#" aria-current="page">Accueil</a></li>
+          <li><a href="#">Chambres</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+        <div class="nav__right">
+          <a href="#" class="nav__lang">EN</a>
+          <button class="btn btn--primary btn--sm">Réserver</button>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- =============== HERO =============== -->
+  <section id="hero" class="sg-block">
+    <h2>Hero</h2>
+    <p class="sg-desc">Full-bleed rounded photo, oversized display headline, subtitle, and the booking bar overlapping the lower edge — exactly the reference's anatomy.</p>
+    <div class="demo-frame" style="padding:0 var(--gutter) var(--gutter)">
+      <section class="hero">
+        <div class="hero__media">
+          <img src="../images/hero-landscape.jpg" alt="Paysage de l'auberge">
+          <div class="hero__inner">
+            <span class="eyebrow eyebrow--onink" style="color:#fff;margin-bottom:16px">Région de charme · Québec</span>
+            <h1 class="hero__title">Se poser,<br>respirer, revenir.</h1>
+            <p class="hero__sub">Une auberge où le foyer crépite, le spa fume dans la neige, et le temps ralentit.</p>
+          </div>
+        </div>
+        <div class="hero__searchbar ds-container" style="max-width:920px">
+          <div class="searchbar">
+            <div class="searchbar__field"><span class="lab">Arrivée</span><span class="val">Ajouter une date</span></div>
+            <div class="searchbar__field"><span class="lab">Départ</span><span class="val">Ajouter une date</span></div>
+            <div class="searchbar__field"><span class="lab">Voyageurs</span><span class="val">2 adultes</span></div>
+            <div class="searchbar__cta"><button class="btn btn--primary btn--lg">Réserver</button></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- =============== SECTION HEADER =============== -->
+  <section id="sectionhead" class="sg-block">
+    <h2>Section header</h2>
+    <p class="sg-desc">Eyebrow + big left title paired with a supporting note (and optional pager/CTA) on the right. Repeats on every content section.</p>
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Chambres &amp; suites</span>
+        <h2 class="section-head__title" style="margin-top:14px">Chaque nuit, un cocon différent</h2>
+      </div>
+      <div class="section-head__aside">
+        Des chambres King avec spa privé aux lofts pour la famille — tous pensés pour le repos.
+        <div style="margin-top:16px"><button class="btn btn--outline btn--sm">Tout voir</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== CARDS =============== -->
+  <section id="cards" class="sg-block">
+    <h2>Cards</h2>
+    <p class="sg-desc">Two families: standard room cards (image, title, text, price/CTA meta) and overlay photo cards for galleries or destinations.</p>
+
+    <div class="sg-label">Room cards</div>
+    <div class="grid grid--3">
+      <article class="card">
+        <div class="card__media"><span class="card__badge badge badge--accent">Spa privé</span><img src="../images/rooms/king-corner.jpg" alt=""></div>
+        <div class="card__body">
+          <h3 class="card__title">Chambre King · Coin</h3>
+          <p class="card__text">Lit king, spa privé et vue sur les bois. L'échappée romantique par excellence.</p>
+          <div class="card__meta"><span class="card__price">189 $ <span>/ nuit</span></span><button class="btn btn--primary btn--sm">Réserver</button></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><span class="card__badge badge badge--success">2 libres</span><img src="../images/rooms/loft-2.jpg" alt=""></div>
+        <div class="card__body">
+          <h3 class="card__title">Loft familial</h3>
+          <p class="card__text">Mezzanine, cuisine complète et espace pour toute la tribu.</p>
+          <div class="card__meta"><span class="card__price">239 $ <span>/ nuit</span></span><button class="btn btn--primary btn--sm">Réserver</button></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><span class="card__badge badge">Coup de cœur</span><img src="../images/rooms/apt1-2.jpg" alt=""></div>
+        <div class="card__body">
+          <h3 class="card__title">Appartement complet</h3>
+          <p class="card__text">Séjour longue durée, tout équipé, avec accès aux commodités.</p>
+          <div class="card__meta"><span class="card__price">209 $ <span>/ nuit</span></span><button class="btn btn--primary btn--sm">Réserver</button></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sg-label">Overlay photo cards</div>
+    <div class="grid grid--3">
+      <article class="card card--overlay">
+        <div class="card__media"><img src="../images/highlights/hot-tub-night.jpg" alt=""></div>
+        <div class="card__caption"><h3>Spa sous les étoiles</h3><p>Détente hivernale</p></div>
+      </article>
+      <article class="card card--overlay">
+        <div class="card__media"><img src="../images/highlights/fireplace.jpg" alt=""></div>
+        <div class="card__caption"><h3>Foyer &amp; veillées</h3><p>Le cœur de l'auberge</p></div>
+      </article>
+      <article class="card card--overlay">
+        <div class="card__media"><img src="../images/highlights/pool.jpg" alt=""></div>
+        <div class="card__caption"><h3>Piscine &amp; terrasse</h3><p>Les beaux jours</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =============== FEATURES / STATS =============== -->
+  <section id="features" class="sg-block">
+    <h2>Features &amp; stats</h2>
+    <p class="sg-desc">Amenity features use a soft accent tile icon. Stats form a trust row for the about/home sections.</p>
+    <div class="sg-label">Amenity features</div>
+    <div class="grid grid--4">
+      <div class="feature"><div class="feature__icon">✦</div><h4>Spa privé</h4><p>Sur les chambres King, à ciel ouvert.</p></div>
+      <div class="feature"><div class="feature__icon">✦</div><h4>Foyer &amp; bois</h4><p>Feu de foyer intérieur et extérieur.</p></div>
+      <div class="feature"><div class="feature__icon">✦</div><h4>Cuisine complète</h4><p>Cuisinez comme à la maison.</p></div>
+      <div class="feature"><div class="feature__icon">✦</div><h4>Sentiers</h4><p>Randonnée et nature au pas de la porte.</p></div>
+    </div>
+    <div class="sg-label">Stats</div>
+    <div class="stats">
+      <div><div class="stat__num">4,9★</div><div class="stat__lab">Note moyenne des voyageurs</div></div>
+      <div><div class="stat__num">12</div><div class="stat__lab">Chambres &amp; suites uniques</div></div>
+      <div><div class="stat__num">2 min</div><div class="stat__lab">Des sentiers et de la rivière</div></div>
+    </div>
+  </section>
+
+  <!-- =============== QUOTES =============== -->
+  <section id="quotes" class="sg-block">
+    <h2>Testimonials</h2>
+    <p class="sg-desc">Quote-forward cards with a star rating and an author row. Paired with the pager control for carousels.</p>
+    <div class="grid grid--3">
+      <blockquote class="quote">
+        <div class="quote__stars">★★★★★</div>
+        <p class="quote__text">« Le spa privé dans la neige, le foyer, l'accueil… on est repartis reposés. »</p>
+        <div class="quote__author"><span class="quote__avatar"></span><div><div class="quote__name">Marie-Claude L.</div><div class="quote__role">Séjour de janvier</div></div></div>
+      </blockquote>
+      <blockquote class="quote">
+        <div class="quote__stars">★★★★★</div>
+        <p class="quote__text">« Un vrai coup de cœur. Chambre impeccable et une région magnifique. »</p>
+        <div class="quote__author"><span class="quote__avatar"></span><div><div class="quote__name">Jean-François R.</div><div class="quote__role">Week-end en couple</div></div></div>
+      </blockquote>
+      <blockquote class="quote">
+        <div class="quote__stars">★★★★★</div>
+        <p class="quote__text">« Parfait en famille — le loft est spacieux et tout est bien pensé. »</p>
+        <div class="quote__author"><span class="quote__avatar"></span><div><div class="quote__name">Sophie D.</div><div class="quote__role">Vacances d'été</div></div></div>
+      </blockquote>
+    </div>
+    <div class="sg-label">Pager</div>
+    <div class="pager"><button aria-label="Précédent" disabled>←</button><button aria-label="Suivant">→</button></div>
+  </section>
+
+  <!-- =============== FOOTER =============== -->
+  <section id="footer" class="sg-block" style="padding-bottom:0">
+    <h2>Footer</h2>
+    <p class="sg-desc">Ink surface, four columns, quiet uppercase labels in accent-muted, warm hover.</p>
+    <div class="demo-frame">
+      <footer class="footer" style="padding-top:48px">
+        <div class="ds-container">
+          <div class="footer__grid">
+            <div>
+              <div class="footer__brand">Auberge de nos Aïeux</div>
+              <p style="max-width:32ch">Un refuge chaleureux au cœur de la région — foyer, spa, sentiers et hospitalité sincère.</p>
+            </div>
+            <div class="footer__col"><h5>Découvrir</h5><a href="#">Chambres</a><a href="#">Services</a><a href="#">À propos</a></div>
+            <div class="footer__col"><h5>Infos</h5><a href="#">FAQ</a><a href="#">Contact</a><a href="#">Nous trouver</a></div>
+            <div class="footer__col"><h5>Suivez-nous</h5><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Infolettre</a></div>
+          </div>
+          <div class="footer__bottom">
+            <p>© 2026 Auberge de nos Aïeux. Tous droits réservés.</p>
+            <p>Fait avec soin au Québec</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- =============== PAGE BLUEPRINTS =============== -->
+  <section id="pages" class="sg-block">
+    <h2>Page blueprints</h2>
+    <p class="sg-desc">How the modules compose into each of the site's pages (mirrored FR + EN). Build order top-to-bottom.</p>
+    <table class="blueprint">
+      <thead><tr><th>Page</th><th>Modules, in order</th></tr></thead>
+      <tbody>
+        <tr><td>Accueil<br><span style="font-weight:400;color:var(--muted)">index.html</span></td>
+          <td><div class="mods"><span class="mod">Nav</span><span class="mod">Hero + booking bar</span><span class="mod">Stats row</span><span class="mod">Section header</span><span class="mod">Room cards ×3</span><span class="mod">Overlay gallery</span><span class="mod">Features ×4</span><span class="mod">Testimonials + pager</span><span class="mod">Newsletter CTA</span><span class="mod">Footer</span></div></td></tr>
+        <tr><td>Chambres<br><span style="font-weight:400;color:var(--muted)">chambres.html</span></td>
+          <td><div class="mods"><span class="mod">Nav</span><span class="mod">Compact hero</span><span class="mod">Section header</span><span class="mod">Room cards (full grid)</span><span class="mod">Features ×4</span><span class="mod">Booking CTA band</span><span class="mod">Footer</span></div></td></tr>
+        <tr><td>Services<br><span style="font-weight:400;color:var(--muted)">services.html</span></td>
+          <td><div class="mods"><span class="mod">Nav</span><span class="mod">Compact hero</span><span class="mod">Section header</span><span class="mod">Overlay cards</span><span class="mod">Features grid</span><span class="mod">Testimonials</span><span class="mod">Footer</span></div></td></tr>
+        <tr><td>À propos<br><span style="font-weight:400;color:var(--muted)">a-propos.html</span></td>
+          <td><div class="mods"><span class="mod">Nav</span><span class="mod">Compact hero</span><span class="mod">Story (lead + body)</span><span class="mod">Stats row</span><span class="mod">Photo gallery (overlay)</span><span class="mod">Footer</span></div></td></tr>
+        <tr><td>FAQ<br><span style="font-weight:400;color:var(--muted)">faq.html</span></td>
+          <td><div class="mods"><span class="mod">Nav</span><span class="mod">Compact hero</span><span class="mod">Section header</span><span class="mod">Accordion (uses Card + line tokens)</span><span class="mod">Contact CTA band</span><span class="mod">Footer</span></div></td></tr>
+        <tr><td>Contact<br><span style="font-weight:400;color:var(--muted)">contact.html</span></td>
+          <td><div class="mods"><span class="mod">Nav</span><span class="mod">Compact hero</span><span class="mod">Form (fields + inputs)</span><span class="mod">Map / info card</span><span class="mod">Footer</span></div></td></tr>
+      </tbody>
+    </table>
+    <p class="sg-desc" style="margin-top:28px">New modules still to spec when we build these pages: <strong>Accordion</strong> (FAQ), <strong>CTA band</strong> (full-width booking prompt), and <strong>Newsletter form</strong> (already partially covered by Forms). I'll add them here as we go.</p>
+  </section>
+
+</main>
+</body>
+</html>

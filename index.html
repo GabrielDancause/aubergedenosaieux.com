@@ -22,137 +22,176 @@
   <link rel="alternate" hreflang="en" href="https://aubergedenosaieux.com/en/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/hero-night.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="design-system/design-system.css?v=ds1">
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="site-nav">
-    <a href="index.html"><img class="nav-logo" src="images/logo.png" alt="Auberge de nos A&iuml;eux" height="36"></a>
-    <ul class="nav-links">
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Auberge de nos A&iuml;eux</a>
+    <ul class="nav__links">
+      <li><a href="index.html" aria-current="page">Accueil</a></li>
       <li><a href="chambres.html">Chambres</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="a-propos.html">&Agrave; propos</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="nav-right">
-      <a href="en/" class="lang-toggle">EN</a>
-      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">R&eacute;server</a>
+    <div class="nav__right">
+      <a href="en/" class="nav__lang">EN</a>
+      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn btn--primary btn--sm">R&eacute;server</a>
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg" style="background-image: url('images/hero-night.jpg')"></div>
-    <div class="hero-content">
-      <h1>Auberge de nos A&iuml;eux</h1>
-      <p class="tagline">La plus belle vue de Charlevoix</p>
-      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn-book">V&eacute;rifier les disponibilit&eacute;s</a>
+  <section class="hero ds-container">
+    <div class="hero__media">
+      <img src="images/hero-night.jpg" alt="Vue nocturne sur le fleuve Saint-Laurent depuis l'auberge" fetchpriority="high">
+      <div class="hero__inner">
+        <span class="eyebrow eyebrow--onink" style="color:#fff">Auberge de nos A&iuml;eux &middot; Les &Eacute;boulements, Charlevoix</span>
+        <h1 class="hero__title" style="margin-top:16px">La plus belle vue<br>de Charlevoix.</h1>
+        <p class="hero__sub">Vue incomparable sur le fleuve, l'Isle-aux-Coudres et les montagnes. Un refuge chaleureux pour voyageurs, nomades et t&eacute;l&eacute;travailleurs.</p>
+      </div>
+    </div>
+    <div class="hero__searchbar ds-container" style="max-width:920px">
+      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="searchbar" style="text-decoration:none">
+        <div class="searchbar__field"><span class="lab">Arriv&eacute;e</span><span class="val">Ajouter une date</span></div>
+        <div class="searchbar__field"><span class="lab">D&eacute;part</span><span class="val">Ajouter une date</span></div>
+        <div class="searchbar__field"><span class="lab">Voyageurs</span><span class="val">2 adultes</span></div>
+        <div class="searchbar__cta"><span class="btn btn--primary btn--lg">V&eacute;rifier les disponibilit&eacute;s</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Trust / stats -->
+  <section class="ds-section ds-section--tight">
+    <div class="ds-container">
+      <div class="stats" style="justify-content:space-between">
+        <div><div class="stat__num">Ann&eacute;es 1950</div><div class="stat__lab">Une auberge de famille depuis</div></div>
+        <div><div class="stat__num">40+</div><div class="stat__lab">Chambres &amp; h&eacute;bergements</div></div>
+        <div><div class="stat__num">5,0&#9733;</div><div class="stat__lab">Note des voyageurs</div></div>
+        <div><div class="stat__num">6</div><div class="stat__lab">Types d'h&eacute;bergement</div></div>
+      </div>
     </div>
   </section>
 
   <!-- Welcome -->
-  <section class="section section-cream">
-    <div class="container text-center">
-      <h2>Bienvenue aux &Eacute;boulements</h2>
-      <p style="max-width:680px; margin:16px auto 0; font-size:1.02rem; color:var(--text-muted); line-height:1.75;">
-        Situ&eacute;e dans l'un des plus beaux villages du Qu&eacute;bec, l'Auberge de nos A&iuml;eux offre &agrave; ses visiteurs une vue incomparable sur le fleuve Saint-Laurent, l'Isle-aux-Coudres et les montagnes de Charlevoix. Un lieu enchanteur et rassembleur pour voyageurs, nomades et t&eacute;l&eacute;travailleurs.
+  <section class="ds-section ds-bg-bone">
+    <div class="ds-container" style="text-align:center">
+      <span class="eyebrow">Bienvenue aux &Eacute;boulements</span>
+      <h2 style="margin:18px auto 0; max-width:16ch">Un des plus beaux villages du Qu&eacute;bec</h2>
+      <p class="ds-lead" style="margin:20px auto 0; max-width:60ch">
+        Nich&eacute;e au c&oelig;ur de Charlevoix, l'Auberge de nos A&iuml;eux offre &agrave; ses visiteurs une vue incomparable sur le fleuve Saint-Laurent, l'Isle-aux-Coudres et les montagnes. Un lieu enchanteur et rassembleur, o&ugrave; le temps ralentit.
       </p>
     </div>
   </section>
 
   <!-- Highlights Gallery -->
-  <section class="section section-white">
-    <div class="container">
-      <h2 class="text-center" style="margin-bottom: 40px;">D&eacute;couvrez notre coin de paradis</h2>
-      <div class="highlights-grid">
-        <div class="highlight-item wide">
-          <img src="images/highlights/pool.jpg" alt="Piscine ext&eacute;rieure avec vue panoramique sur le fleuve" loading="lazy">
-          <span class="highlight-label">Piscine avec vue sur le fleuve</span>
+  <section class="ds-section">
+    <div class="ds-container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Notre coin de paradis</span>
+          <h2 class="section-head__title" style="margin-top:14px">D&eacute;couvrez ce qui vous attend</h2>
         </div>
-        <div class="highlight-item">
-          <img src="images/highlights/fireplace.jpg" alt="Foyer en pierre avec ambiance chaleureuse" loading="lazy">
-          <span class="highlight-label">Foyer chaleureux</span>
-        </div>
-        <div class="highlight-item">
-          <img src="images/highlights/sunset.jpg" alt="Coucher de soleil sur les montagnes de Charlevoix" loading="lazy">
-          <span class="highlight-label">Couchers de soleil magiques</span>
-        </div>
-        <div class="highlight-item">
-          <img src="images/highlights/hot-tub-night.jpg" alt="Spa priv&eacute; des chambres King avec spa" loading="lazy">
-          <span class="highlight-label">Spa priv&eacute; &mdash; Chambres King</span>
-        </div>
-        <div class="highlight-item wide">
-          <img src="images/highlights/fire-pit.jpg" alt="Aire de feu ext&eacute;rieure avec vue" loading="lazy">
-          <span class="highlight-label">Feu ext&eacute;rieur &amp; terrasse panoramique</span>
-        </div>
+        <div class="section-head__aside">Piscine panoramique, foyers, spa priv&eacute; et couchers de soleil sur le fleuve &mdash; l'exp&eacute;rience Charlevoix au grand complet.</div>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/pool.jpg" alt="Piscine ext&eacute;rieure avec vue panoramique sur le fleuve" loading="lazy"></div>
+          <div class="card__caption"><h3>Piscine avec vue sur le fleuve</h3><p>Baignade panoramique</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/hot-tub-night.jpg" alt="Spa priv&eacute; des chambres King" loading="lazy"></div>
+          <div class="card__caption"><h3>Spa priv&eacute; &mdash; Chambres King</h3><p>D&eacute;tente sous les &eacute;toiles</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/sunset.jpg" alt="Coucher de soleil sur les montagnes de Charlevoix" loading="lazy"></div>
+          <div class="card__caption"><h3>Couchers de soleil magiques</h3><p>Sur les montagnes</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/fireplace.jpg" alt="Foyer en pierre chaleureux" loading="lazy"></div>
+          <div class="card__caption"><h3>Foyer chaleureux</h3><p>Le c&oelig;ur de l'auberge</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/fire-pit.jpg" alt="Aire de feu ext&eacute;rieure avec vue" loading="lazy"></div>
+          <div class="card__caption"><h3>Feu ext&eacute;rieur &amp; terrasse</h3><p>Veill&eacute;es panoramiques</p></div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Accommodations -->
-  <section class="section section-cream">
-    <div class="container">
-      <h2 class="text-center" style="margin-bottom: 40px;">Nos h&eacute;bergements</h2>
-      <div class="room-grid">
+  <section class="ds-section ds-bg-bone">
+    <div class="ds-container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Nos h&eacute;bergements</span>
+          <h2 class="section-head__title" style="margin-top:14px">Un cocon pour chaque voyageur</h2>
+        </div>
+        <div class="section-head__aside">
+          De l'appartement familial au mini-refuge en for&ecirc;t.
+          <div style="margin-top:16px"><a href="chambres.html" class="btn btn--outline btn--sm">Voir toutes les chambres</a></div>
+        </div>
+      </div>
+      <div class="grid grid--3">
 
-        <a href="chambres.html#appartement" class="room-card">
-          <img src="images/rooms/apt1-1.jpg" alt="Appartement" loading="lazy" width="1200" height="800">
-          <div class="room-card-body">
-            <h3>Appartements</h3>
-            <p>Spacieux, tout &eacute;quip&eacute;s avec cuisine priv&eacute;e et vue sur le fleuve. Parfait pour familles ou groupes d'amis.</p>
-            <span class="btn-book">Voir les options</span>
+        <a href="chambres.html#appartement" class="card">
+          <div class="card__media"><img src="images/rooms/apt1-1.jpg" alt="Appartement" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Appartements</h3>
+            <p class="card__text">Spacieux, tout &eacute;quip&eacute;s avec cuisine priv&eacute;e et vue sur le fleuve. Parfait pour familles ou groupes d'amis.</p>
+            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">Voir les options &rarr;</span></div>
           </div>
         </a>
 
-        <a href="chambres.html#loft" class="room-card">
-          <img src="images/rooms/loft-1.jpg" alt="Loft artistique" loading="lazy" width="1200" height="800">
-          <div class="room-card-body">
-            <h3>Loft artistique</h3>
-            <p>Ancien atelier d'artistes transform&eacute; en un magnifique loft avec mezzanine, cuisine et terrasse priv&eacute;e.</p>
-            <span class="btn-book">D&eacute;couvrir</span>
+        <a href="chambres.html#loft" class="card">
+          <div class="card__media"><img src="images/rooms/loft-1.jpg" alt="Loft artistique" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Loft artistique</h3>
+            <p class="card__text">Ancien atelier d'artistes transform&eacute; en un magnifique loft avec mezzanine, cuisine et terrasse priv&eacute;e.</p>
+            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">D&eacute;couvrir &rarr;</span></div>
           </div>
         </a>
 
-        <a href="chambres.html#motel" class="room-card">
-          <img src="images/rooms/king-corner.jpg" alt="Chambre de motel" loading="lazy" width="1200" height="800">
-          <div class="room-card-body">
-            <h3>Chambres de motel</h3>
-            <p>Une quarantaine de chambres priv&eacute;es : double, queen, king avec balcon ou spa. Du choix pour tous.</p>
-            <span class="btn-book">Explorer</span>
+        <a href="chambres.html#motel" class="card">
+          <div class="card__media"><span class="card__badge badge badge--accent">Spa priv&eacute;</span><img src="images/rooms/king-corner.jpg" alt="Chambre de motel" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Chambres de motel</h3>
+            <p class="card__text">Une quarantaine de chambres priv&eacute;es : double, queen, king avec balcon ou spa. Du choix pour tous.</p>
+            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">Explorer &rarr;</span></div>
           </div>
         </a>
 
-        <a href="chambres.html#refuges" class="room-card">
-          <img src="images/rooms/refuge.jpg" alt="Mini-refuge" loading="lazy" width="1200" height="800">
-          <div class="room-card-body">
-            <h3>Mini-refuges</h3>
-            <p>Petits chalets en bois avec vue sur le fleuve. L'h&eacute;bergement parfait pour un retrait relaxant.</p>
-            <span class="btn-book">D&eacute;couvrir</span>
+        <a href="chambres.html#refuges" class="card">
+          <div class="card__media"><img src="images/rooms/refuge.jpg" alt="Mini-refuge" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Mini-refuges</h3>
+            <p class="card__text">Petits chalets en bois avec vue sur le fleuve. L'h&eacute;bergement parfait pour un retrait relaxant.</p>
+            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">D&eacute;couvrir &rarr;</span></div>
           </div>
         </a>
 
-        <a href="chambres.html#dortoir" class="room-card">
-          <img src="images/rooms/dorm.jpg" alt="Dortoir" loading="lazy" width="1200" height="800">
-          <div class="room-card-body">
-            <h3>Dortoir &amp; Auberge</h3>
-            <p>Id&eacute;al pour voyageurs &agrave; petit budget. Dortoir mixte de 10 lits et chambres d'auberge charmantes.</p>
-            <span class="btn-book">R&eacute;server</span>
+        <a href="chambres.html#dortoir" class="card">
+          <div class="card__media"><img src="images/rooms/dorm.jpg" alt="Dortoir" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Dortoir &amp; Auberge</h3>
+            <p class="card__text">Id&eacute;al pour voyageurs &agrave; petit budget. Dortoir mixte de 10 lits et chambres d'auberge charmantes.</p>
+            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">R&eacute;server &rarr;</span></div>
           </div>
         </a>
 
-        <a href="chambres.html#vanlife" class="room-card">
-          <img src="images/rooms/room-6.jpg" alt="Van Life" loading="lazy" width="1200" height="800">
-          <div class="room-card-body">
-            <h3>Van Life</h3>
-            <p>Stationnements pour v&eacute;hicules am&eacute;nag&eacute;s avec acc&egrave;s aux espaces communs de l'auberge.</p>
-            <span class="btn-book">En savoir plus</span>
+        <a href="chambres.html#vanlife" class="card">
+          <div class="card__media"><img src="images/rooms/room-6.jpg" alt="Van Life" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">Van Life</h3>
+            <p class="card__text">Stationnements pour v&eacute;hicules am&eacute;nag&eacute;s avec acc&egrave;s aux espaces communs de l'auberge.</p>
+            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">En savoir plus &rarr;</span></div>
           </div>
         </a>
 
@@ -161,158 +200,135 @@
   </section>
 
   <!-- Amenities -->
-  <section class="section section-white">
-    <div class="container">
-      <h2 class="text-center" style="margin-bottom: 40px;">Ce qui vous attend</h2>
-      <div class="amenities-grid">
-        <div class="amenity-item">
-          <span class="amenity-icon">&#127946;</span>
-          <span>Piscine ext&eacute;rieure</span>
+  <section class="ds-section">
+    <div class="ds-container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Sur place</span>
+          <h2 class="section-head__title" style="margin-top:14px">Tout pour se sentir chez soi</h2>
         </div>
-        <div class="amenity-item">
-          <span class="amenity-icon">&#127859;</span>
-          <span>Cuisine commune</span>
-        </div>
-        <div class="amenity-item">
-          <span class="amenity-icon">&#128187;</span>
-          <span>Coworking</span>
-        </div>
-        <div class="amenity-item">
-          <span class="amenity-icon">&#128293;</span>
-          <span>Foyer int. &amp; ext.</span>
-        </div>
-        <div class="amenity-item">
-          <span class="amenity-icon">&#127769;</span>
-          <span>Observatoire</span>
-        </div>
-        <div class="amenity-item">
-          <span class="amenity-icon">&#128246;</span>
-          <span>WiFi gratuit</span>
-        </div>
-        <div class="amenity-item">
-          <span class="amenity-icon">&#9728;&#65039;</span>
-          <span>Terrasse panoramique</span>
-        </div>
-        <div class="amenity-item">
-          <span class="amenity-icon">&#127830;</span>
-          <span>BBQ commun</span>
-        </div>
+        <div class="section-head__aside">Des commodit&eacute;s pens&eacute;es autant pour la d&eacute;tente que pour le t&eacute;l&eacute;travail.</div>
+      </div>
+      <div class="grid grid--4">
+        <div class="feature"><div class="feature__icon">&#127946;</div><h4>Piscine ext&eacute;rieure</h4><p>Avec vue panoramique</p></div>
+        <div class="feature"><div class="feature__icon">&#127859;</div><h4>Cuisine commune</h4><p>Enti&egrave;rement &eacute;quip&eacute;e</p></div>
+        <div class="feature"><div class="feature__icon">&#128187;</div><h4>Coworking</h4><p>Espaces pour t&eacute;l&eacute;travail</p></div>
+        <div class="feature"><div class="feature__icon">&#128293;</div><h4>Foyer int. &amp; ext.</h4><p>Veill&eacute;es au coin du feu</p></div>
+        <div class="feature"><div class="feature__icon">&#127769;</div><h4>Observatoire</h4><p>Ciel &eacute;toil&eacute; de Charlevoix</p></div>
+        <div class="feature"><div class="feature__icon">&#128246;</div><h4>WiFi gratuit</h4><p>Partout sur le site</p></div>
+        <div class="feature"><div class="feature__icon">&#9728;&#65039;</div><h4>Terrasse panoramique</h4><p>Face au fleuve</p></div>
+        <div class="feature"><div class="feature__icon">&#127830;</div><h4>BBQ commun</h4><p>Pour vos repas d'&eacute;t&eacute;</p></div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="section section-cream">
-    <div class="container">
-      <h2 class="text-center" style="margin-bottom: 40px;">Avis des clients</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>Cet endroit est sublime, la vue est incroyable, la piscine est vraiment agr&eacute;able. L'ambiance de cette auberge est vraiment cool. Soir&eacute;e au bord du feu dans le jardin tr&egrave;s agr&eacute;able. Je conseille &agrave; 100%.</p>
-          <span class="author">&mdash; Ao&ucirc;t 2023</span>
+  <section class="ds-section ds-bg-bone">
+    <div class="ds-container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Avis des clients</span>
+          <h2 class="section-head__title" style="margin-top:14px">Ils y sont, ils y reviennent</h2>
         </div>
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>Cela fait 2 ans que nous venons &agrave; votre auberge et nous n'avons jamais &eacute;t&eacute; d&eacute;&ccedil;u ! L'ambiance le soir dans la cuisine c'est magique. Nous attendons d&eacute;j&agrave; les dates pour l'&eacute;t&eacute; prochain !</p>
-          <span class="author">&mdash; Client r&eacute;gulier</span>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>Ceci n'est pas une auberge. Ceci est un petit coin de paradis ! Tout est &agrave; la disposition des voyageurs. La piscine, la propret&eacute;, le service excellent. La possibilit&eacute; de faire un feu le soir avec les autres voyageurs.</p>
-          <span class="author">&mdash; Voyageur enthousiaste</span>
-        </div>
+        <div class="section-head__aside">Note moyenne de 5,0 &eacute;toiles sur les avis de nos voyageurs.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- Social Follow -->
-  <section class="section section-white text-center">
-    <div class="container">
-      <h2>Suivez nos aventures</h2>
-      <p style="max-width:520px; margin:12px auto 0; color:var(--text-muted);">Rejoignez notre communaut&eacute; pour d&eacute;couvrir les coulisses de l'auberge, nos &eacute;v&eacute;nements et les plus beaux moments de Charlevoix.</p>
-      <div class="social-follow">
-        <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" class="social-fb"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
-        <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" class="social-ig"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram</a>
+      <div class="grid grid--3">
+        <blockquote class="quote">
+          <div class="quote__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="quote__text">&laquo; Cet endroit est sublime, la vue est incroyable, la piscine vraiment agr&eacute;able. Soir&eacute;e au bord du feu dans le jardin&hellip; Je conseille &agrave; 100%. &raquo;</p>
+          <div class="quote__author"><div><div class="quote__name">Voyageuse v&eacute;rifi&eacute;e</div><div class="quote__role">Ao&ucirc;t 2023</div></div></div>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="quote__text">&laquo; Cela fait 2 ans que nous venons et nous n'avons jamais &eacute;t&eacute; d&eacute;&ccedil;us ! L'ambiance le soir dans la cuisine, c'est magique. On attend d&eacute;j&agrave; l'&eacute;t&eacute; prochain ! &raquo;</p>
+          <div class="quote__author"><div><div class="quote__name">Client r&eacute;gulier</div><div class="quote__role">Fid&egrave;le depuis 2 ans</div></div></div>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="quote__text">&laquo; Ceci n'est pas une auberge, c'est un petit coin de paradis ! La piscine, la propret&eacute;, le service excellent, et les feux le soir avec les autres voyageurs. &raquo;</p>
+          <div class="quote__author"><div><div class="quote__name">Voyageur enthousiaste</div><div class="quote__role">S&eacute;jour en famille</div></div></div>
+        </blockquote>
       </div>
     </div>
   </section>
 
   <!-- Region -->
-  <section class="section section-dark">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+  <section class="ds-section ds-bg-ink">
+    <div class="ds-container">
+      <div class="split">
         <div>
-          <h2>Quoi faire dans la r&eacute;gion ?</h2>
-          <p style="margin: 16px 0 24px; color: var(--text-light); line-height: 1.7;">La r&eacute;gion de Charlevoix regorge d'activit&eacute;s. Plages, randonn&eacute;es, observation d'oiseaux, kayak, concerts en pleine nature et fermes locales. Tout &ccedil;a &agrave; quelques minutes en voiture.</p>
-          <div class="activities-list">
-            <span class="activity-tag">Parc des Grands-Jardins</span>
-            <span class="activity-tag">Parc des Hautes-Gorges</span>
-            <span class="activity-tag">L'Isle-aux-Coudres</span>
-            <span class="activity-tag">Plage de Saint-Ir&eacute;n&eacute;e</span>
-            <span class="activity-tag">Baie-Saint-Paul</span>
-            <span class="activity-tag">Katabatik (kayak)</span>
-            <span class="activity-tag">Domaine Forget</span>
-            <span class="activity-tag">Lavande Azul&eacute;e</span>
+          <span class="eyebrow eyebrow--onink">La r&eacute;gion</span>
+          <h2 style="margin:16px 0 12px">Quoi faire dans Charlevoix ?</h2>
+          <p style="margin-bottom:24px; max-width:46ch">Plages, randonn&eacute;es, observation d'oiseaux, kayak, concerts en pleine nature et fermes locales &mdash; tout &ccedil;a &agrave; quelques minutes en voiture.</p>
+          <div class="sg-row" style="display:flex; flex-wrap:wrap; gap:10px">
+            <span class="tag">Parc des Grands-Jardins</span>
+            <span class="tag">Parc des Hautes-Gorges</span>
+            <span class="tag">L'Isle-aux-Coudres</span>
+            <span class="tag">Plage de Saint-Ir&eacute;n&eacute;e</span>
+            <span class="tag">Baie-Saint-Paul</span>
+            <span class="tag">Katabatik (kayak)</span>
+            <span class="tag">Domaine Forget</span>
+            <span class="tag">Lavande Azul&eacute;e</span>
           </div>
-          <a href="https://www.tourisme-charlevoix.com" target="_blank" rel="noopener" style="display:inline-block; margin-top:24px; color:var(--gold); font-weight:600; font-size:0.9rem;">Visiter Tourisme Charlevoix &rarr;</a>
+          <a href="https://www.tourisme-charlevoix.com" target="_blank" rel="noopener" class="btn btn--onink" style="margin-top:28px">Visiter Tourisme Charlevoix &rarr;</a>
         </div>
         <div>
-          <img src="images/hero-landscape.jpg" alt="Paysage de Charlevoix" style="border-radius: var(--radius); box-shadow: var(--shadow-lg);" loading="lazy" width="1200" height="800">
+          <img src="images/hero-landscape.jpg" alt="Paysage de Charlevoix" style="border-radius: var(--r-xl); box-shadow: var(--sh-lg);" loading="lazy" width="1200" height="800">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Newsletter -->
-  <section class="section section-cream text-center">
-    <div class="container">
-      <h2>Restez inform&eacute;s</h2>
-      <p style="max-width: 480px; margin: 12px auto 24px; color: var(--text-muted);">Recevez nos promotions, nouveaut&eacute;s et actualit&eacute;s directement dans votre bo&icirc;te courriel.</p>
-      <form class="newsletter-form" id="newsletter-form">
-        <input type="email" name="email" placeholder="Votre courriel" required aria-label="Adresse courriel">
-        <button type="submit" class="btn-book">S'inscrire</button>
+  <!-- Social + Newsletter CTA band -->
+  <section class="ds-section">
+    <div class="ds-container" style="text-align:center">
+      <span class="eyebrow">Restons en contact</span>
+      <h2 style="margin:18px auto 0; max-width:18ch">Suivez nos aventures &amp; nos nouveaut&eacute;s</h2>
+      <p class="ds-lead" style="margin:16px auto 28px; max-width:52ch">Rejoignez notre communaut&eacute; et recevez promotions, &eacute;v&eacute;nements et plus beaux moments de Charlevoix.</p>
+
+      <form class="newsletter-form" id="newsletter-form" style="display:flex; gap:10px; max-width:460px; margin:0 auto 28px; flex-wrap:wrap; justify-content:center">
+        <input class="input" type="email" name="email" placeholder="Votre courriel" required aria-label="Adresse courriel" style="flex:1; min-width:220px">
+        <button type="submit" class="btn btn--primary">S'inscrire</button>
       </form>
-      <p class="newsletter-status" style="display:none; margin-top:14px; font-size:0.85rem;"></p>
+
+      <div class="sg-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap">
+        <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" class="btn btn--outline"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+        <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" class="btn btn--outline"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/logo.png" alt="Auberge de nos A&iuml;eux" height="32" style="filter: brightness(2);">
-          <p>Une vue incomparable sur le fleuve, l'Isle-aux-Coudres et les montagnes de Charlevoix depuis les ann&eacute;es 1950.</p>
+  <footer class="footer">
+    <div class="ds-container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Auberge de nos A&iuml;eux</div>
+          <p style="max-width:34ch">Une vue incomparable sur le fleuve, l'Isle-aux-Coudres et les montagnes de Charlevoix depuis les ann&eacute;es 1950.</p>
         </div>
-        <div class="footer-col">
-          <h4>Explorer</h4>
-          <ul>
-            <li><a href="">Accueil</a></li>
-            <li><a href="chambres.html">Chambres</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="a-propos.html">&Agrave; propos</a></li>
-          </ul>
+        <div class="footer__col">
+          <h5>Explorer</h5>
+          <a href="index.html">Accueil</a>
+          <a href="chambres.html">Chambres</a>
+          <a href="services.html">Services</a>
+          <a href="a-propos.html">&Agrave; propos</a>
         </div>
-        <div class="footer-col">
-          <h4>Infos pratiques</h4>
-          <ul>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener">R&eacute;server</a></li>
-          </ul>
+        <div class="footer__col">
+          <h5>Infos pratiques</h5>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener">R&eacute;server</a>
         </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="tel:+15813336633">(581) 333-6633</a></li>
-            <li><a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a></li>
-            <li style="color:var(--text-light); font-size:0.85rem; margin-top:8px;"><a href="https://www.google.com/maps/place/Auberge+de+nos+A%C3%AFeux/@47.4776896,-70.3262101,183m/data=!3m1!1e3!4m18!1m8!3m7!1s0x4cbf1b248afc7445:0x2adbfd89c0db328d!2s2178+Rte.+du+Fleuve,+Les+%C3%89boulements,+QC+G0A+2M0,+Canada!3b1!8m2!3d47.4777902!4d-70.3260624!16s%2Fg%2F11cphw_nf9!3m8!1s0x4cbf1b26eba6133b:0x964265b255de7a34!5m2!4m1!1i2!8m2!3d47.4778076!4d-70.3260806!16s%2Fg%2F1tjkfdjm?entry=ttu" target="_blank" rel="noopener" style="color:var(--text-light); text-decoration:none;">2178 Route du Fleuve<br>Les &Eacute;boulements, QC<br>G0A 2M0</a></li>
-          </ul>
+        <div class="footer__col">
+          <h5>Contact</h5>
+          <a href="tel:+15813336633">(581) 333-6633</a>
+          <a href="mailto:info@aubergedenosaieux.com">info@aubergedenosaieux.com</a>
+          <a href="https://www.google.com/maps/place/Auberge+de+nos+A%C3%AFeux/@47.4776896,-70.3262101,183m/data=!3m1!1e3!4m18!1m8!3m7!1s0x4cbf1b248afc7445:0x2adbfd89c0db328d!2s2178+Rte.+du+Fleuve,+Les+%C3%89boulements,+QC+G0A+2M0,+Canada!3b1!8m2!3d47.4777902!4d-70.3260624!16s%2Fg%2F11cphw_nf9!3m8!1s0x4cbf1b26eba6133b:0x964265b255de7a34!5m2!4m1!1i2!8m2!3d47.4778076!4d-70.3260806!16s%2Fg%2F1tjkfdjm?entry=ttu" target="_blank" rel="noopener">2178 Route du Fleuve<br>Les &Eacute;boulements, QC G0A 2M0</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer__bottom">
         <p>&copy; 2026 Auberge de nos A&iuml;eux &mdash; CITQ: 066986 &ndash; 627706</p>
-        <div class="footer-social">
+        <div class="footer__col" style="display:flex; gap:16px">
           <a href="https://facebook.com/aubergedenosaieux2020/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
           <a href="https://instagram.com/aubergedenosaieux/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
         </div>
@@ -320,13 +336,13 @@
     </div>
   </footer>
 
-<script src="mobile-nav.js" defer></script>
+<script src="mobile-nav.js?v=ds1" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  "name": "Auberge de nos A\u00efeux",
-  "description": "H\u00e9bergement aux \u00c9boulements, Charlevoix. Chambres, appartements, loft, mini-refuges, van life avec vue sur le fleuve Saint-Laurent.",
+  "name": "Auberge de nos Aïeux",
+  "description": "Hébergement aux Éboulements, Charlevoix. Chambres, appartements, loft, mini-refuges, van life avec vue sur le fleuve Saint-Laurent.",
   "url": "https://aubergedenosaieux.com/",
   "image": "https://aubergedenosaieux.com/images/hero-night.jpg",
   "telephone": "+1-581-333-6633",
@@ -334,7 +350,7 @@
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "2178 Route du Fleuve",
-    "addressLocality": "Les \u00c9boulements",
+    "addressLocality": "Les Éboulements",
     "addressRegion": "QC",
     "postalCode": "G0A 2M0",
     "addressCountry": "CA"
