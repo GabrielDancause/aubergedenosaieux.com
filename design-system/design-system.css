@@ -360,6 +360,32 @@ ul { list-style: none; }
 .hero__sub { color: rgba(255,255,255,0.9); font-size: var(--fs-lead); max-width: 46ch; }
 /* booking bar floats over the hero's lower edge */
 .hero__searchbar { margin-top: calc(var(--s-12) * -1); position: relative; z-index: 2; }
+/* Compact hero for interior pages */
+.hero--compact .hero__media { min-height: 42vh; }
+.hero--compact .hero__title { font-size: var(--fs-h1); }
+
+/* Chip jump-nav (anchor pills under an interior hero) */
+.chipnav { border-bottom: 1px solid var(--line); background: var(--bg); }
+.chipnav__inner {
+  display: flex; gap: var(--s-2); flex-wrap: wrap; justify-content: center;
+  max-width: var(--maxw); margin: 0 auto; padding: var(--s-4) var(--gutter);
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.chipnav a {
+  white-space: nowrap; font-size: var(--fs-sm); font-weight: 500; color: var(--ink-2);
+  padding: 8px 16px; border-radius: var(--r-pill); border: 1px solid var(--line-2);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.chipnav a:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* Rounded media frame (editorial image blocks) */
+.media-frame { border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-md); }
+.media-frame img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+
+/* Reverse a .split's column order on desktop (stacks image-first on mobile) */
+@media (min-width: 861px) {
+  .split--reverse > :first-child { order: 2; }
+}
 
 /* -------------------------------------------------------------
    11. Section header pattern
