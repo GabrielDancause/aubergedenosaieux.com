@@ -24,6 +24,8 @@
   --accent-soft: #F1E6DC; /* accent tint backgrounds */
   --gold:        #B08A4F; /* secondary warm — sparing use */
   --success:     #3F6F4E; /* availability / positive */
+  --brand-red:     #E23E59; /* logo red — booking CTA */
+  --brand-red-ink: #C62A46; /* booking CTA hover */
 
   /* --- Color: inverted surfaces --- */
   --ink-surface: #181713; /* dark sections / footer */
@@ -181,8 +183,8 @@ ul { list-style: none; }
 .btn--primary { background: var(--ink); color: var(--bg); }
 .btn--primary:hover { background: #000; color: var(--bg); }
 
-.btn--accent { background: var(--accent); color: #fff; }
-.btn--accent:hover { background: var(--accent-ink); color: #fff; }
+.btn--accent { background: var(--brand-red); color: #fff; }
+.btn--accent:hover { background: var(--brand-red-ink); color: #fff; }
 
 .btn--outline { background: transparent; color: var(--ink); border-color: var(--line-2); }
 .btn--outline:hover { border-color: var(--ink); color: var(--ink); }
