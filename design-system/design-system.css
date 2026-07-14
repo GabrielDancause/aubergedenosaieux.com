@@ -305,7 +305,8 @@ ul { list-style: none; }
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.nav__logo { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--ink); letter-spacing: var(--tracking-tight); }
+.nav__logo { display: inline-flex; align-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--ink); letter-spacing: var(--tracking-tight); }
+.nav__logo img { height: 34px; width: auto; display: block; }
 .nav__links { display: flex; align-items: center; gap: var(--s-8); }
 .nav__links a {
   font-size: var(--fs-sm);
@@ -335,7 +336,7 @@ ul { list-style: none; }
 /* -------------------------------------------------------------
    10. Hero
    ------------------------------------------------------------- */
-.hero { position: relative; padding: var(--s-16) 0 0; }
+.hero { position: relative; padding: var(--gutter); padding-bottom: 0; }
 .hero__media {
   position: relative;
   min-height: 62vh;
