@@ -19,9 +19,9 @@
   --line-2:    #D8D3C7;   /* stronger borders / dividers */
 
   /* --- Color: warm accent (hospitality) --- */
-  --accent:      #9C5B36; /* terracotta clay — eyebrows, prices, active */
-  --accent-ink:  #7E4526; /* accent hover / text on soft */
-  --accent-soft: #F1E6DC; /* accent tint backgrounds */
+  --accent:      #E23E59; /* logo red — eyebrows, active underline, hovers */
+  --accent-ink:  #C62A46; /* accent hover / text on soft */
+  --accent-soft: #FBE4E9; /* accent tint backgrounds */
   --gold:        #B08A4F; /* secondary warm — sparing use */
   --success:     #3F6F4E; /* availability / positive */
   --brand-red:     #E23E59; /* logo red — booking CTA */
