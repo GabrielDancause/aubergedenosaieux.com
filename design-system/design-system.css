@@ -421,6 +421,46 @@ ul { list-style: none; }
 .card--overlay .card__caption h3 { color: #fff; font-size: var(--fs-h4); }
 .card--overlay .card__caption p { color: rgba(255,255,255,0.82); font-size: var(--fs-sm); }
 
+/* Listing card — full-bleed rounded photo with a floating frosted info bar
+   and a corner badge (the reference's signature image treatment). */
+.card--listing {
+  position: relative;
+  display: block;
+  border: none;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  color: var(--ink);
+}
+.card--listing .card__media { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; }
+.card--listing::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(transparent 55%, rgba(24,23,19,0.28));
+}
+.card--listing:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
+.card--listing .card__badge { top: var(--s-4); right: var(--s-4); left: auto; }
+.card__bar {
+  position: absolute; z-index: 1; left: var(--s-4); right: var(--s-4); bottom: var(--s-4);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-4);
+  padding: 14px 14px 14px 18px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-sm);
+  transition: background var(--dur) var(--ease);
+}
+.card--listing:hover .card__bar { background: #fff; }
+.card__bar .card__title { font-size: var(--fs-h4); line-height: 1.15; }
+.card__bar p { font-size: var(--fs-xs); color: var(--muted); margin-top: 2px; }
+.card__go {
+  flex-shrink: 0;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--ink); color: #fff;
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.card--listing:hover .card__go { background: var(--accent); transform: rotate(-45deg); }
+
 /* -------------------------------------------------------------
    13. Feature / amenity item
    ------------------------------------------------------------- */

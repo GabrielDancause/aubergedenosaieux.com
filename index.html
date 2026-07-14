@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/hero-night.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="design-system/design-system.css?v=ds1">
+  <link rel="stylesheet" href="design-system/design-system.css?v=ds2">
 </head>
 <body>
 
@@ -56,15 +56,8 @@
         <span class="eyebrow eyebrow--onink" style="color:#fff">Auberge de nos A&iuml;eux &middot; Les &Eacute;boulements, Charlevoix</span>
         <h1 class="hero__title" style="margin-top:16px">La plus belle vue<br>de Charlevoix.</h1>
         <p class="hero__sub">Vue incomparable sur le fleuve, l'Isle-aux-Coudres et les montagnes. Un refuge chaleureux pour voyageurs, nomades et t&eacute;l&eacute;travailleurs.</p>
+        <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="btn btn--primary btn--lg" style="margin-top:28px">V&eacute;rifier les disponibilit&eacute;s</a>
       </div>
-    </div>
-    <div class="hero__searchbar ds-container" style="max-width:920px">
-      <a href="https://hotels.cloudbeds.com/fr/reservation/FjrK2q" target="_blank" rel="noopener" class="searchbar" style="text-decoration:none">
-        <div class="searchbar__field"><span class="lab">Arriv&eacute;e</span><span class="val">Ajouter une date</span></div>
-        <div class="searchbar__field"><span class="lab">D&eacute;part</span><span class="val">Ajouter une date</span></div>
-        <div class="searchbar__field"><span class="lab">Voyageurs</span><span class="val">2 adultes</span></div>
-        <div class="searchbar__cta"><span class="btn btn--primary btn--lg">V&eacute;rifier les disponibilit&eacute;s</span></div>
-      </a>
     </div>
   </section>
 
@@ -141,57 +134,52 @@
       </div>
       <div class="grid grid--3">
 
-        <a href="chambres.html#appartement" class="card">
+        <a href="chambres.html#appartement" class="card card--listing">
           <div class="card__media"><img src="images/rooms/apt1-1.jpg" alt="Appartement" loading="lazy"></div>
-          <div class="card__body">
-            <h3 class="card__title">Appartements</h3>
-            <p class="card__text">Spacieux, tout &eacute;quip&eacute;s avec cuisine priv&eacute;e et vue sur le fleuve. Parfait pour familles ou groupes d'amis.</p>
-            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">Voir les options &rarr;</span></div>
+          <div class="card__bar">
+            <div><h3 class="card__title">Appartements</h3><p>Cuisine priv&eacute;e &middot; vue sur le fleuve</p></div>
+            <span class="card__go" aria-hidden="true">&rarr;</span>
           </div>
         </a>
 
-        <a href="chambres.html#loft" class="card">
+        <a href="chambres.html#loft" class="card card--listing">
           <div class="card__media"><img src="images/rooms/loft-1.jpg" alt="Loft artistique" loading="lazy"></div>
-          <div class="card__body">
-            <h3 class="card__title">Loft artistique</h3>
-            <p class="card__text">Ancien atelier d'artistes transform&eacute; en un magnifique loft avec mezzanine, cuisine et terrasse priv&eacute;e.</p>
-            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">D&eacute;couvrir &rarr;</span></div>
+          <div class="card__bar">
+            <div><h3 class="card__title">Loft artistique</h3><p>Mezzanine &middot; terrasse priv&eacute;e</p></div>
+            <span class="card__go" aria-hidden="true">&rarr;</span>
           </div>
         </a>
 
-        <a href="chambres.html#motel" class="card">
-          <div class="card__media"><span class="card__badge badge badge--accent">Spa priv&eacute;</span><img src="images/rooms/king-corner.jpg" alt="Chambre de motel" loading="lazy"></div>
-          <div class="card__body">
-            <h3 class="card__title">Chambres de motel</h3>
-            <p class="card__text">Une quarantaine de chambres priv&eacute;es : double, queen, king avec balcon ou spa. Du choix pour tous.</p>
-            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">Explorer &rarr;</span></div>
+        <a href="chambres.html#motel" class="card card--listing">
+          <span class="card__badge badge badge--accent">Spa priv&eacute;</span>
+          <div class="card__media"><img src="images/rooms/king-corner.jpg" alt="Chambre de motel" loading="lazy"></div>
+          <div class="card__bar">
+            <div><h3 class="card__title">Chambres de motel</h3><p>Double, queen ou king</p></div>
+            <span class="card__go" aria-hidden="true">&rarr;</span>
           </div>
         </a>
 
-        <a href="chambres.html#refuges" class="card">
+        <a href="chambres.html#refuges" class="card card--listing">
           <div class="card__media"><img src="images/rooms/refuge.jpg" alt="Mini-refuge" loading="lazy"></div>
-          <div class="card__body">
-            <h3 class="card__title">Mini-refuges</h3>
-            <p class="card__text">Petits chalets en bois avec vue sur le fleuve. L'h&eacute;bergement parfait pour un retrait relaxant.</p>
-            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">D&eacute;couvrir &rarr;</span></div>
+          <div class="card__bar">
+            <div><h3 class="card__title">Mini-refuges</h3><p>Chalet en bois &middot; vue fleuve</p></div>
+            <span class="card__go" aria-hidden="true">&rarr;</span>
           </div>
         </a>
 
-        <a href="chambres.html#dortoir" class="card">
+        <a href="chambres.html#dortoir" class="card card--listing">
           <div class="card__media"><img src="images/rooms/dorm.jpg" alt="Dortoir" loading="lazy"></div>
-          <div class="card__body">
-            <h3 class="card__title">Dortoir &amp; Auberge</h3>
-            <p class="card__text">Id&eacute;al pour voyageurs &agrave; petit budget. Dortoir mixte de 10 lits et chambres d'auberge charmantes.</p>
-            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">R&eacute;server &rarr;</span></div>
+          <div class="card__bar">
+            <div><h3 class="card__title">Dortoir &amp; Auberge</h3><p>Petit budget &middot; convivial</p></div>
+            <span class="card__go" aria-hidden="true">&rarr;</span>
           </div>
         </a>
 
-        <a href="chambres.html#vanlife" class="card">
+        <a href="chambres.html#vanlife" class="card card--listing">
           <div class="card__media"><img src="images/rooms/room-6.jpg" alt="Van Life" loading="lazy"></div>
-          <div class="card__body">
-            <h3 class="card__title">Van Life</h3>
-            <p class="card__text">Stationnements pour v&eacute;hicules am&eacute;nag&eacute;s avec acc&egrave;s aux espaces communs de l'auberge.</p>
-            <div class="card__meta"><span class="btn btn--ghost" style="padding-left:0">En savoir plus &rarr;</span></div>
+          <div class="card__bar">
+            <div><h3 class="card__title">Van Life</h3><p>Stationnement am&eacute;nag&eacute; &middot; services</p></div>
+            <span class="card__go" aria-hidden="true">&rarr;</span>
           </div>
         </a>
 
