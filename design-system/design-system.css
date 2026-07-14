@@ -261,6 +261,50 @@ ul { list-style: none; }
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
+textarea.input { min-height: 140px; resize: vertical; }
+
+/* Accordion (FAQ) — native <details>, no JS */
+.accordion { display: flex; flex-direction: column; gap: 10px; }
+.accordion details {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+.accordion summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 22px;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: var(--fs-body);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform var(--dur) var(--ease);
+}
+.accordion details[open] summary::after { transform: rotate(45deg); }
+.accordion summary:hover { color: var(--accent); }
+.accordion .acc-body {
+  padding: 0 22px 20px;
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+}
+.accordion .acc-body p { margin-bottom: 8px; }
+.accordion .acc-body p:last-child { margin-bottom: 0; }
+
+/* Map frame */
+.map-frame { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); }
+.map-frame iframe { display: block; width: 100%; height: 340px; border: 0; }
 
 /* -------------------------------------------------------------
    8. Search / booking bar (signature module)
