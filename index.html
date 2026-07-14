@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/2026/hero-pool.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="design-system/design-system.css?v=ds8">
+  <link rel="stylesheet" href="design-system/design-system.css?v=ds9">
 </head>
 <body>
 
@@ -65,56 +65,10 @@
   <section class="ds-section ds-section--tight">
     <div class="ds-container">
       <div class="stats" style="justify-content:space-between">
-        <div><div class="stat__num">Ann&eacute;es 1950</div><div class="stat__lab">Une auberge de famille depuis</div></div>
-        <div><div class="stat__num">40+</div><div class="stat__lab">Chambres &amp; h&eacute;bergements</div></div>
+        <div class="stat--hide-mobile"><div class="stat__num">Ann&eacute;es 1950</div><div class="stat__lab">Une auberge de famille depuis</div></div>
+        <div class="stat--hide-mobile"><div class="stat__num">40+</div><div class="stat__lab">Chambres &amp; h&eacute;bergements</div></div>
         <div><div class="stat__num">8,1<span style="font-size:1.4rem;color:var(--muted)">/10</span></div><div class="stat__lab">Note sur Booking.com</div></div>
-        <div><div class="stat__num">6</div><div class="stat__lab">Types d'h&eacute;bergement</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Welcome -->
-  <section class="ds-section ds-bg-bone">
-    <div class="ds-container" style="text-align:center">
-      <span class="eyebrow">Bienvenue aux &Eacute;boulements</span>
-      <h2 style="margin:18px auto 0; max-width:16ch">Un des plus beaux villages du Qu&eacute;bec</h2>
-      <p class="ds-lead" style="margin:20px auto 0; max-width:60ch">
-        Nich&eacute;e au c&oelig;ur de Charlevoix, l'Auberge de nos A&iuml;eux offre &agrave; ses visiteurs une vue incomparable sur le fleuve Saint-Laurent, l'Isle-aux-Coudres et les montagnes. Un lieu enchanteur et rassembleur, o&ugrave; le temps ralentit.
-      </p>
-    </div>
-  </section>
-
-  <!-- Highlights Gallery -->
-  <section class="ds-section">
-    <div class="ds-container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Notre coin de paradis</span>
-          <h2 class="section-head__title" style="margin-top:14px">D&eacute;couvrez ce qui vous attend</h2>
-        </div>
-        <div class="section-head__aside">Piscine panoramique, foyers, spa priv&eacute; et couchers de soleil sur le fleuve &mdash; l'exp&eacute;rience Charlevoix au grand complet.</div>
-      </div>
-      <div class="grid grid--3">
-        <article class="card card--overlay">
-          <div class="card__media"><img src="images/highlights/pool.jpg" alt="Piscine ext&eacute;rieure avec vue panoramique sur le fleuve" loading="lazy"></div>
-          <div class="card__caption"><h3>Piscine avec vue sur le fleuve</h3><p>Baignade panoramique</p></div>
-        </article>
-        <article class="card card--overlay">
-          <div class="card__media"><img src="images/highlights/hot-tub-night.jpg" alt="Spa priv&eacute; des chambres King" loading="lazy"></div>
-          <div class="card__caption"><h3>Spa priv&eacute; &mdash; Chambres King</h3><p>D&eacute;tente sous les &eacute;toiles</p></div>
-        </article>
-        <article class="card card--overlay">
-          <div class="card__media"><img src="images/highlights/sunset.jpg" alt="Coucher de soleil sur les montagnes de Charlevoix" loading="lazy"></div>
-          <div class="card__caption"><h3>Couchers de soleil magiques</h3><p>Sur les montagnes</p></div>
-        </article>
-        <article class="card card--overlay">
-          <div class="card__media"><img src="images/highlights/fireplace.jpg" alt="Foyer en pierre chaleureux" loading="lazy"></div>
-          <div class="card__caption"><h3>Foyer chaleureux</h3><p>Le c&oelig;ur de l'auberge</p></div>
-        </article>
-        <article class="card card--overlay">
-          <div class="card__media"><img src="images/highlights/fire-pit.jpg" alt="Aire de feu ext&eacute;rieure avec vue" loading="lazy"></div>
-          <div class="card__caption"><h3>Feu ext&eacute;rieur &amp; terrasse</h3><p>Veill&eacute;es panoramiques</p></div>
-        </article>
+        <div class="stat--hide-mobile"><div class="stat__num">6</div><div class="stat__lab">Types d'h&eacute;bergement</div></div>
       </div>
     </div>
   </section>
@@ -187,8 +141,43 @@
     </div>
   </section>
 
-  <!-- Amenities -->
+  <!-- Highlights Gallery -->
   <section class="ds-section">
+    <div class="ds-container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Notre coin de paradis</span>
+          <h2 class="section-head__title" style="margin-top:14px">D&eacute;couvrez ce qui vous attend</h2>
+        </div>
+        <div class="section-head__aside">Piscine panoramique, foyers, spa priv&eacute; et couchers de soleil sur le fleuve &mdash; l'exp&eacute;rience Charlevoix au grand complet.</div>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/pool.jpg" alt="Piscine ext&eacute;rieure avec vue panoramique sur le fleuve" loading="lazy"></div>
+          <div class="card__caption"><h3>Piscine avec vue sur le fleuve</h3><p>Baignade panoramique</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/hot-tub-night.jpg" alt="Spa priv&eacute; des chambres King" loading="lazy"></div>
+          <div class="card__caption"><h3>Spa priv&eacute; &mdash; Chambres King</h3><p>D&eacute;tente sous les &eacute;toiles</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/sunset.jpg" alt="Coucher de soleil sur les montagnes de Charlevoix" loading="lazy"></div>
+          <div class="card__caption"><h3>Couchers de soleil magiques</h3><p>Sur les montagnes</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/fireplace.jpg" alt="Foyer en pierre chaleureux" loading="lazy"></div>
+          <div class="card__caption"><h3>Foyer chaleureux</h3><p>Le c&oelig;ur de l'auberge</p></div>
+        </article>
+        <article class="card card--overlay">
+          <div class="card__media"><img src="images/highlights/fire-pit.jpg" alt="Aire de feu ext&eacute;rieure avec vue" loading="lazy"></div>
+          <div class="card__caption"><h3>Feu ext&eacute;rieur &amp; terrasse</h3><p>Veill&eacute;es panoramiques</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities -->
+  <section class="ds-section ds-bg-bone">
     <div class="ds-container">
       <div class="section-head">
         <div>
@@ -211,7 +200,7 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="ds-section ds-bg-bone">
+  <section class="ds-section">
     <div class="ds-container">
       <div class="section-head">
         <div>
@@ -237,6 +226,17 @@
           <div class="quote__author"><div><div class="quote__name">Voyageur enthousiaste</div><div class="quote__role">S&eacute;jour en famille</div></div></div>
         </blockquote>
       </div>
+    </div>
+  </section>
+
+  <!-- Welcome -->
+  <section class="ds-section ds-bg-bone">
+    <div class="ds-container" style="text-align:center">
+      <span class="eyebrow">Bienvenue aux &Eacute;boulements</span>
+      <h2 style="margin:18px auto 0; max-width:16ch">Un des plus beaux villages du Qu&eacute;bec</h2>
+      <p class="ds-lead" style="margin:20px auto 0; max-width:60ch">
+        Nich&eacute;e au c&oelig;ur de Charlevoix, l'Auberge de nos A&iuml;eux offre &agrave; ses visiteurs une vue incomparable sur le fleuve Saint-Laurent, l'Isle-aux-Coudres et les montagnes. Un lieu enchanteur et rassembleur, o&ugrave; le temps ralentit.
+      </p>
     </div>
   </section>
 

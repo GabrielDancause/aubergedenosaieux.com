@@ -632,7 +632,9 @@ textarea.input { min-height: 140px; resize: vertical; }
   .searchbar__cta { padding: 8px 0 0; }
   .searchbar__cta .btn { width: 100%; }
   .hero__searchbar { margin-top: var(--s-6); }
-  .stats { gap: var(--s-8); }
+  .stats { gap: var(--s-8); justify-content: center !important; }
   /* Let hero headlines wrap naturally on mobile (ignore desktop <br>) */
   .hero__title br { display: none; }
+  /* Show only the highlighted stat (e.g. the Booking.com score) on mobile */
+  .stat--hide-mobile { display: none; }
 }
